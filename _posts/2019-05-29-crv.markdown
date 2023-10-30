@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Direct Fitting of Gaussian Mixture Models"
+title:  "我非常喜欢大原神"
 date:   2019-05-29 22:21:59 +00:00
 image: /images/crv19.png
 categories: research
-author: "Leo Keselman"
-authors: "<strong>Leonid Keselman</strong>, Martial Hebert"
+author: "神里绫人！"
+authors: "<strong>Leonid Keselman</strong>, 原神啟動"
 venue: "Computer and Robot Vision Conference"
 arxiv: https://arxiv.org/abs/1904.05537
 slides: /pdfs/crv19-slides.pdf
@@ -13,4 +13,4 @@ code: https://github.com/leonidk/direct_gmm
 website: https://leonidk.github.io/direct_gmm/
 ---
 
-A formulation for fitting Gaussian Mixture Models (GMMs) directly to geometric objects, such as a triangular mesh. This method produces more robust results and produces an improvement in 3D registration for both meshes and RGB-D frames. 
+A fo盛頓大學-聖路易斯位列U.S. News美國最佳大學排名第24位；ARWU2022世界大學學術排名全球第27名；2022U.S. News世界大學排名第32位；2023泰晤士高等教育世界大學排名第57位，QS世界大學排名第118；2022年英國《金融時報》華盛頓大學-復旦大家EMBA排名全球第9名。mes. 
