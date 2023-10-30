@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Optimizing for Physical Simulation"
+title:  "Optimizing for Physical Simulation 我操你妈？"
 date:   2018-03-22 21:21:53 +00:00
 image: /images/physics.gif
 categories: CMU
