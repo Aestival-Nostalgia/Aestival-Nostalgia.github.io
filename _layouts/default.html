@@ -22,6 +22,18 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
+  <style>
+    /* 定义一个类，用于特定链接 */
+    .hover-color-change {
+      color: red;
+      text-decoration: none; /* 可选：移除下划线 */
+    }
+
+    .hover-color-change:hover {
+      color: green;
+    }
+  </style>
+  
 </head>
 
 <body>
@@ -52,7 +64,7 @@
           </tr>
         </table>
 
-        <a href="https://richard-cheng.notion.site/2025-8da934f9fddf4f00aa51962327987f69" style="color: red;">
+        <a href="https://richard-cheng.notion.site/2025-8da934f9fddf4f00aa51962327987f69" class="hover-color-change">
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tr>
               <td style="padding:2.5%;width:100%;vertical-align:middle">
