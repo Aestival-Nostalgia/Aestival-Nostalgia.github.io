@@ -103,3 +103,16 @@ span.highlight {
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 //@import "highlights";
 //@import "svg-icons";
+
+.widget-container {
+  display: flex;
+  justify-content: center; /* 可选，居中对齐 */
+  align-items: center; /* 可选，垂直居中 */
+  gap: 10px; /* 控制两个组件之间的间距 */
+}
+
+.widget {
+  width: 100px; /* 根据需要调整宽度 */
+  height: 100px; /* 根据需要调整高度 */
+  overflow: hidden; /* 隐藏溢出内容 */
+}
