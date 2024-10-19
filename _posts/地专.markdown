@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Dice Stacking: A Dynamic Manipulation Task"
+title:  "China University of Geosciences / 中国地质大学（武汉）"
 date:   2018-12-05 21:21:53 +00:00
 image: /images/cupdice.png
 categories: CMU
