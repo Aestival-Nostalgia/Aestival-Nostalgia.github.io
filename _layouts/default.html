@@ -91,7 +91,7 @@
               <td style="padding:2.5%;width:100%;vertical-align:middle">
                 <h2>*2024年下半年秋季校园招聘 / 申请季的重要信息更新*</h2>
                 <p>
-                  2024年8月：本人正在进行MIHOYO2025秋季入职校园招聘的投递，如果您是MIHOYO的人力资源管理人员，本人诚悟的邀请您访问本链接。（请直接点击本段文字。）
+                  2024年10月：本人正在进行MIHOYO2025秋季入职校园招聘的投递，如果您是MIHOYO的人力资源管理人员，本人诚悟的邀请您访问本链接。（请直接点击本段文字。）
                 </p>
               </td>
             </tr>
@@ -457,9 +457,11 @@
           {% endfor %}
           {% endfor %}
         </table>
+
         <br>
         <br>
         <br>
+
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
             <td style="padding:2.5%;width:100%;vertical-align:middle">
@@ -473,7 +475,7 @@
 
           {% for post in site.posts %}
           {% for cat in post.categories %}
-          {% if cat != 'research' and cat != 'Intel' %}
+          {% if cat == 'CMU' %}
           <tr>
             <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
               <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
