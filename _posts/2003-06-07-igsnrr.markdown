@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Institute of Geographic Sciences and Natural Resources Research, Chinese Academy of Sciences / 中国科学院地理科学与资源研究所"
+title:  "Institute of Geographic Sciences and Natural Resources Research, CAS / 中国科学院地理科学与资源研究所"
 date:   2003-06-07 22:21:59 +00:00
 image: /images/dashpoint.png
 categories: research
