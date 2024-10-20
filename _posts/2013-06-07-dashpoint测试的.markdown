@@ -7,4 +7,4 @@ categories: Intel
 fucccckkk: https://patents.google.com/patent/US10007994B2 
 patenVS啊额无人: https://patents.google.com/patent/US9494415B2
 ---
-Finger tracking on a microcontroller, with optics tricks and some HCI ideas
+Finger tracking on a microcontroller, with optics tricks and some HCI idea1111111111s
