@@ -2,7 +2,7 @@
 layout: post
 title:  "China University of Geosciences / 中国地质大学（武汉）"
 date:   2008-12-05 21:21:53 +00:00
-image: /images/cug.jpg
+image: /images/CUG.jpg
 categories: research
 course: "16-741 Mechanics of Manipulation"
 author: "Leo Keselman"
