@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "China University of Geosciences / 中国地质大学（武汉）"
+date:   1988-12-05 21:21:53 +00:00
+image: /images/cupdice.png
+categories: research
+course: "16-741 Mechanics of Manipulation"
+author: "Leo Keselman"
+video: https://www.youtube.com/watch?v=kTuZnmyR4Kc
+paper: /pdfs/dicestack.pdf
+code: https://github.com/leonidk/cupdice
+---
+With Hunter Goforth, we designed a manipulation task and solved it with imitation learning. 
+
+With [Chris Atkeson](http://www.cs.cmu.edu/~cga/) and Alex Spitzer. Using optimizers to match an observed trajectory.
