@@ -7,4 +7,4 @@ The website design is just a modification of [Jon Barron's website](https://jonb
 
 
 ## issues
-* 图片放到tn文件夹下面的image文件夹里。
+* 图片请放到tn文件夹下面的image文件夹里。
