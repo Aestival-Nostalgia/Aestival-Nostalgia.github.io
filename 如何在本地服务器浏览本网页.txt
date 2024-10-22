@@ -1,0 +1,13 @@
+本网页是基于 https://github.com/barryclark/jekyll-now?tab=readme-ov-file Jekyll Now (Jekyll的简化版)制作的
+如果想要在本地浏览，请做如下操作：
+1.安装 RUBY和MSYS2
+2.安装 gem install jekyll bundler
+3.创建 Gemfile 在网页根目录
+内容为：
+source "https://rubygems.org"
+gem "github-pages", group: :jekyll_plugins
+
+4.运行 bundle install 安装依赖
+5.运行本地服务器 bundle exec jekyll serve
+
+6.访问网页：http://127.0.0.1:4000/

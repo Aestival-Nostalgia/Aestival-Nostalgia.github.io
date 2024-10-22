@@ -10,6 +10,4 @@ video: https://www.youtube.com/watch?v=kTuZnmyR4Kc
 paper: /pdfs/dicestack.pdf
 code: https://github.com/leonidk/cupdice
 ---
-With Hunter Goforth, we designed a manipulation task and solved it with imitation learning. 
-
-With [Chris Atkeson](http://www.cs.cmu.edu/~cga/) and Alex Spitzer. Using optimizers to match an observed trajectory.
+With Hunter Goforth, we designed a manipulation task and solved it with imitation learning.
