@@ -345,6 +345,7 @@
         <br>
         <br>
 
+        <!-- Excerpt and Image Gallery Structure -->
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
             <td style="padding:2.5%;width:100%;vertical-align:middle">
@@ -431,18 +432,31 @@
         
           .extra-image {
             width: auto;
-            height: 100px;
+            height: 100px; /* Default image height on larger screens */
             max-width: 100%;
           }
         
-          /* Media query to handle mobile responsiveness */
+          /* Media query for small screens (mobile devices) */
           @media (max-width: 768px) {
+            .image-gallery {
+              justify-content: space-between;
+            }
+        
+            /* Ensure that multiple images fit on the same row on smaller screens */
             .extra-image {
-              width: 100%; /* Make images fill the width of the screen on small devices */
-              height: auto; /* Adjust height proportionally */
+              flex-basis: 30%; /* Each image takes up about 30% of the width */
+              height: 80px; /* Reduce image height for smaller screens */
             }
           }
-        </style>                    
+        
+          /* Media query for even smaller screens (very small mobile devices) */
+          @media (max-width: 480px) {
+            .extra-image {
+              flex-basis: 45%; /* Adjust to fit more images on smaller screens */
+              height: 70px; /* Further reduce image height */
+            }
+          }
+        </style>
 
         <br>
         <br>
