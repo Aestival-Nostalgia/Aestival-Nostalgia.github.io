@@ -249,67 +249,6 @@
           </tr>
         </table>  
       
-        <br>
-        <br>
-        <br>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-              <td style="padding:2.5%;width:100%;vertical-align:middle">
-                  <h2>Characteristics / 特质</h2>
-                  <p>
-                      I'm interested in creative planning, design work, and organizing content systematically.
-                  </p>
-      
-                  <div style="display: flex; align-items: center; margin-top: 10px;">
-                      <div style="flex: 0 0 40px; display: flex; justify-content: center;">
-                          <i class="fas fa-lightbulb" style="color:rgb(0, 104, 183); font-size: 1.5em;"></i>
-                      </div>
-                      <div style="flex: 1;">
-                          <span style="display: block; margin-left: 10px;">喜欢创意、策划和设计工作：我对创意工作充满热情，喜欢策划新的项目，并享受设计过程中的每个细节。</span>
-                      </div>
-                  </div>
-      
-                  <div style="display: flex; align-items: center; margin-top: 10px;">
-                      <div style="flex: 0 0 40px; display: flex; justify-content: center;">
-                          <i class="fas fa-tasks" style="color:rgb(0, 104, 183); font-size: 1.5em;"></i>
-                      </div>
-                      <div style="flex: 1;">
-                          <span style="display: block; margin-left: 10px;">喜欢条理化工作内容：我倾向于把工作内容系统化，确保每个步骤都有条不繁地进行，使用效率工具来优化工作流程。</span>
-                      </div>
-                  </div>
-      
-                  <div style="display: flex; align-items: center; margin-top: 10px;">
-                      <div style="flex: 0 0 40px; display: flex; justify-content: center;">
-                          <i class="fas fa-check-circle" style="color:rgb(0, 104, 183); font-size: 1.5em;"></i>
-                      </div>
-                      <div style="flex: 1;">
-                          <span style="display: block; margin-left: 10px;">喜欢高完成度的工作：我追求高质量的工作成果，重视细节，致力于确保每个项目的完成度达到最高标准。</span>
-                      </div>
-                  </div>
-      
-                  <div style="display: flex; align-items: center; margin-top: 10px;">
-                      <div style="flex: 0 0 40px; display: flex; justify-content: center;">
-                          <i class="fas fa-mountain" style="color:rgb(0, 104, 183); font-size: 1.5em;"></i>
-                      </div>
-                      <div style="flex: 1;">
-                          <span style="display: block; margin-left: 10px;">拥有较好的抗压能力：我能够在压力下保持冷静和专注，确保任务在高强度的环境中顺利完成。</span>
-                      </div>
-                  </div>
-      
-                  <div style="display: flex; align-items: center; margin-top: 10px;">
-                      <div style="flex: 0 0 40px; display: flex; justify-content: center;">
-                          <i class="fas fa-users" style="color:rgb(0, 104, 183); font-size: 1.5em;"></i>
-                      </div>
-                      <div style="flex: 1;">
-                          <span style="display: block; margin-left: 10px;">可以很好的与其他团队成员沟通协作：我擅长团队协作，能够有效地与同事沟通，推动团队共同实现目标。</span>
-                      </div>
-                  </div>
-      
-              </td>
-          </tr>
-      </table>      
-      
       <br>
       <br>
       <br>
@@ -404,141 +343,84 @@
               
         <br>
         <br>
-        <br>  
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>My Hobbies / 我的興趣感好</h2>
-              <p>我爱原神原神爱我。
-              </p>
-            </td>
-          </tr>
-        </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'Intel' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              <em>{{post.categories}} {{post.course}}</em>
-              <br>
-              {{ post.date | date: "%Y-%m-%d" }}
-
-              <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">paper</a> /
-              {% endif %}
-              {% if post.patent %}
-              <a href="{{post.patent}}">patent</a> /
-              {% endif %}
-              {% if post.patent2 %}
-              <a href="{{post.patent2}}">patent #2</a> /
-              {% endif %}
-              {% if post.patent3 %}
-              <a href="{{post.patent3}}">patent #3</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.video2 %}
-              <a href="{{post.video2}}">video #2</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table>
-
-        <br>
-        <br>
         <br>
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
             <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>原神をプレイしていないことが</h2>
-              <p>這破學我是真的不想上了。 
-              </p>
+              <h2>My Hobbies / 兴趣爱好</h2>
             </td>
           </tr>
         </table>
+        
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            {% for post in site.posts %}
+            {% for cat in post.categories %}
+            {% if cat == 'CMU' %}
+            <tr>
+              <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
+                <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+              </td>
+              <td style="padding:2.5%;width:75%;vertical-align:middle; text-align: justify !important;">
+                <h3>{{post.title}}</h3>
+                <em>{{post.course}}</em>
+        
+                {% if post.website %}
+                <a href="{{post.website}}">website</a> /
+                {% endif %}
+                {% if post.paper %}
+                <a href="{{post.paper}}">paper</a> /
+                {% endif %}
+                {% if post.patent %}
+                <a href="{{post.patent}}">patent</a> /
+                {% endif %}
+                {% if post.patent2 %}
+                <a href="{{post.patent2}}">patent #2</a> /
+                {% endif %}
+                {% if post.patent3 %}
+                <a href="{{post.patent3}}">patent #3</a> /
+                {% endif %}
+                {% if post.video %}
+                <a href="{{post.video}}">video</a> /
+                {% endif %}
+                {% if post.video2 %}
+                <a href="{{post.video2}}">video #2</a> /
+                {% endif %}
+                {% if post.code %}
+                <a href="{{post.code}}">code</a> /
+                {% endif %}
+                {% if post.poster %}
+                <a href="{{post.poster}}">poster</a> /
+                {% endif %}
+                {% if post.slides %}
+                <a href="{{post.slides}}">slides</a> /
+                {% endif %}
+                
+                <!-- Excerpt with two-end justification -->
+                <p style="text-align: justify !important;">
+                  {{ post.excerpt }}
+                </p>
+        
+                <!-- Display additional images if the 'extra_images' attribute exists -->
+                {% if post.extra_images %}
+                <div style="display: flex; justify-content: start; gap: 10px; margin-top: 10px;">
+                  {% for image in post.extra_images %}
+                  <img src="{{ image }}" alt="extra image" style="width: auto; height: 100px; max-width: 100%;" />
+                  {% endfor %}
+                </div>
+                {% endif %}
 
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'CMU' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              <em>{{post.categories}} {{post.course}}</em>
-              <br>
-              {{ post.date | date: "%Y-%m-%d" }}
-
-              <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">paper</a> /
-              {% endif %}
-              {% if post.patent %}
-              <a href="{{post.patent}}">patent</a> /
-              {% endif %}
-              {% if post.patent2 %}
-              <a href="{{post.patent2}}">patent #2</a> /
-              {% endif %}
-              {% if post.patent3 %}
-              <a href="{{post.patent3}}">patent #3</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.video2 %}
-              <a href="{{post.video2}}">video #2</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
+        
+              </td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+          </table>
         </table>
+        
+                            
 
         <br>
         <br>
