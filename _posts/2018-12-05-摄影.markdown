@@ -2,7 +2,7 @@
 layout: post
 title:  "Photography / 摄影"
 date:   2018-12-05 21:21:53 +00:00
-image: /images/TK.png
+image: /images/s.png
 categories: CMU
 cou1rse: "16-741 Mechanics of Manipulation"
 auth1or: "Leo Keselman"

@@ -405,11 +405,12 @@
 
                 <!-- Display additional images if the 'extra_images' attribute exists -->
                 {% if post.extra_images %}
-                <div class="image-gallery">
-                  {% for image in post.extra_images %}
-                  <img src="{{ image }}" alt="extra image" class="extra-image" />
-                  {% endfor %}
-                </div>
+                  <p><em>Some of the photos I have taken:</em></p> <!-- 在图片展示之前添加这句话 -->
+                  <div class="image-gallery">
+                    {% for image in post.extra_images %}
+                    <img src="{{ image }}" alt="extra image" class="extra-image" />
+                    {% endfor %}
+                  </div>
                 {% endif %}
 
               </td>
