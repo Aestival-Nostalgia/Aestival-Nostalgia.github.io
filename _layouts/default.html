@@ -353,7 +353,7 @@
             </td>
           </tr>
         </table>
-        
+
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             {% for post in site.posts %}
@@ -366,7 +366,7 @@
               <td style="padding:2.5%;width:75%;vertical-align:middle; text-align: justify !important;">
                 <h3>{{post.title}}</h3>
                 <em>{{post.course}}</em>
-        
+
                 {% if post.website %}
                 <a href="{{post.website}}">website</a> /
                 {% endif %}
@@ -397,12 +397,12 @@
                 {% if post.slides %}
                 <a href="{{post.slides}}">slides</a> /
                 {% endif %}
-        
+
                 <!-- Excerpt with two-end justification -->
                 <p style="text-align: justify !important;">
                   {{ post.excerpt }}
                 </p>
-        
+
                 <!-- Display additional images if the 'extra_images' attribute exists -->
                 {% if post.extra_images %}
                 <div class="image-gallery">
@@ -411,7 +411,7 @@
                   {% endfor %}
                 </div>
                 {% endif %}
-        
+
               </td>
             </tr>
             {% endif %}
@@ -419,7 +419,7 @@
             {% endfor %}
           </table>
         </table>
-        
+
         <!-- CSS Style -->
         <style>
           /* Flex layout to make images wrap automatically */
@@ -429,31 +429,29 @@
             gap: 10px;
             margin-top: 10px;
           }
-        
+
           .extra-image {
-            width: auto;
-            height: 100px; /* Default image height on larger screens */
-            max-width: 100%;
+            width: 100%;
+            height: auto; /* Keep aspect ratio, so images don't get squished */
+            max-width: 200px; /* Set a maximum width for images */
+            max-height: 200px; /* Set a maximum height */
           }
-        
+
           /* Media query for small screens (mobile devices) */
           @media (max-width: 768px) {
-            .image-gallery {
-              justify-content: space-between;
-            }
-        
-            /* Ensure that multiple images fit on the same row on smaller screens */
             .extra-image {
-              flex-basis: 30%; /* Each image takes up about 30% of the width */
-              height: 80px; /* Reduce image height for smaller screens */
+              flex-basis: 30%;
+              max-width: 150px;
+              max-height: 150px;
             }
           }
-        
+
           /* Media query for even smaller screens (very small mobile devices) */
           @media (max-width: 480px) {
             .extra-image {
-              flex-basis: 45%; /* Adjust to fit more images on smaller screens */
-              height: 70px; /* Further reduce image height */
+              flex-basis: 45%;
+              max-width: 120px;
+              max-height: 120px;
             }
           }
         </style>
