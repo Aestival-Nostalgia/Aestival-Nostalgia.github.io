@@ -12,6 +12,16 @@ cod1e: https://github.com/leonidk/cupdice
 extra_images:
   - /images/TK.png
   - /images/config.png
+  - /images/circle_bw_crop.png
+  - /images/circle_bw_crop.png
+  - /images/TK.png
+  - /images/config.png
+  - /images/TK.png
+  - /images/config.png
+  - /images/circle_bw_crop.png
+  - /images/circle_bw_crop.png
+  - /images/TK.png
+  - /images/config.png
 ---
 I enjoy using semi-professional photography equipment for my shoots. My preferred subjects include environmental portrait photography and environmental photography. Thanks to fieldwork opportunities over the past few years, I have captured numerous images of the landscapes on the Qinghai-Tibet Plateau in China. Additionally, I enjoy photographing urban environments and environmental portraits in bustling cities, and I also work with my friends to capture images from cosplay events. My photography skills enable me to handle conference and event photography tasks within my graduate research group.
 <br><br>
