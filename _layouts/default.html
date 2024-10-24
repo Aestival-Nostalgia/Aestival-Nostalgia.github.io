@@ -430,19 +430,20 @@
             margin-top: 10px;
           }
 
+          /* 图片在网页端的最大宽度和高度（60%大小） */
           .extra-image {
             width: 100%;
-            height: auto; /* Keep aspect ratio, so images don't get squished */
-            max-width: 200px; /* Set a maximum width for images */
-            max-height: 200px; /* Set a maximum height */
+            height: auto; /* 保持宽高比 */
+            max-width: 120px; /* 调整为当前的60% */
+            max-height: 120px; /* 调整为当前的60% */
           }
 
           /* Media query for small screens (mobile devices) */
           @media (max-width: 768px) {
             .extra-image {
               flex-basis: 30%;
-              max-width: 150px;
-              max-height: 150px;
+              max-width: 75px; /* 调整为当前的50% */
+              max-height: 75px; /* 调整为当前的50% */
             }
           }
 
@@ -450,8 +451,8 @@
           @media (max-width: 480px) {
             .extra-image {
               flex-basis: 45%;
-              max-width: 120px;
-              max-height: 120px;
+              max-width: 60px; /* 调整为当前的50% */
+              max-height: 60px; /* 调整为当前的50% */
             }
           }
         </style>
