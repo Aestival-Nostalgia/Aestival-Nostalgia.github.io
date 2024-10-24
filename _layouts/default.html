@@ -396,7 +396,7 @@
                 {% if post.slides %}
                 <a href="{{post.slides}}">slides</a> /
                 {% endif %}
-                
+        
                 <!-- Excerpt with two-end justification -->
                 <p style="text-align: justify !important;">
                   {{ post.excerpt }}
@@ -404,9 +404,9 @@
         
                 <!-- Display additional images if the 'extra_images' attribute exists -->
                 {% if post.extra_images %}
-                <div style="display: flex; justify-content: start; gap: 10px; margin-top: 10px;">
+                <div class="image-gallery">
                   {% for image in post.extra_images %}
-                  <img src="{{ image }}" alt="extra image" style="width: auto; height: 100px; max-width: 100%;" />
+                  <img src="{{ image }}" alt="extra image" class="extra-image" />
                   {% endfor %}
                 </div>
                 {% endif %}
@@ -419,7 +419,30 @@
           </table>
         </table>
         
-                            
+        <!-- CSS Style -->
+        <style>
+          /* Flex layout to make images wrap automatically */
+          .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+          }
+        
+          .extra-image {
+            width: auto;
+            height: 100px;
+            max-width: 100%;
+          }
+        
+          /* Media query to handle mobile responsiveness */
+          @media (max-width: 768px) {
+            .extra-image {
+              width: 100%; /* Make images fill the width of the screen on small devices */
+              height: auto; /* Adjust height proportionally */
+            }
+          }
+        </style>                    
 
         <br>
         <br>
