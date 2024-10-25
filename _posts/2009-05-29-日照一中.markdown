@@ -5,7 +5,7 @@ date:   2009-05-29 22:21:59 +00:00
 image: /images/crv19.png
 categories: research
 author: "神里绫人"
-authors: "<strong>Leonid Keselman</strong>, 原神啟動"
+aut1hors: "<strong>Leonid Keselman</strong>, 原神啟動"
 venue: "Computer and Robot Vision Conference"
 arxiv: https://arxiv.org/abs/1904.05537
 slides: /pdfs/crv19-slides.pdf
