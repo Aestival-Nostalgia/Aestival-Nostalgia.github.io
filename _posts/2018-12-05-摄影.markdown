@@ -7,10 +7,12 @@ categories: CMU
 id: photography
 extra_images:
   - group:
-      - /images/DSC0862.png
-      - /images/BRI.png
+      - /images/1.png
+      - /images/2.png
+      - /images/3.png
+      - /images/4.png
   - group:
-      - /images/TK.png
+      - /images/1.png
   - group:
       - /images/gg28154743.png
       - /images/cs224n-poster.png
