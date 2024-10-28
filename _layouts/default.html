@@ -204,7 +204,7 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           {% for post in site.posts %}
           {% for cat in post.categories %}
-          {% if cat == 'xue' %}
+          {% if cat == 'RE' %}
           <tr>
             <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
               <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
@@ -212,40 +212,58 @@
             <td style="padding:2.5%;width:75%;vertical-align:middle">
               <h3>{{post.title}}</h3>
               <br>
-              {{post.authors}}
-
+              {{post.author}}
               <br>
               <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
               <br>
-              {% if post.arxiv %}
-              <a href="{{post.arxiv}}">arxiv</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.youtube %}
-              <a href="{{post.youtube}}">youtube</a> /
-              {% endif %}
+              
+              {% capture links %}
+                {% if post.bibtex %}<a href="#" onclick="toggleBib(event, '{{ post.bibtex }}', {{ forloop.index }})">BibTex</a>{% endif %}
+                {% if post.arxiv %}{% if post.bibtex %} / {% endif %}<a href="{{ post.arxiv }}">arxiv</a>{% endif %}
+                {% if post.video %}{% if post.bibtex or post.arxiv %} / {% endif %}<a href="{{ post.video }}">Video</a>{% endif %}
+                {% if post.code %}{% if post.bibtex or post.arxiv or post.video %} / {% endif %}<a href="{{ post.code }}">code</a>{% endif %}
+                {% if post.poster %}{% if post.bibtex or post.arxiv or post.video or post.code %} / {% endif %}<a href="{{ post.poster }}">poster</a>{% endif %}
+                {% if post.PDF %}{% if post.bibtex or post.arxiv or post.video or post.code or post.poster %} / {% endif %}<a href="{{ post.PDF }}" target="_blank">PDF</a>{% endif %}
+              {% endcapture %}
+              
+              {{ links }}
+              
               <p></p>
               {{ post.excerpt }}
+              
+              <!-- 添加一个显示 bib 内容的区域，使用等宽字体 -->
+              <div id="bibtex-preview-{{ forloop.index }}" style="display:none; padding: 10px; border: 1px solid #ddd; margin-top: 10px; font-family: monospace;"></div>
             </td>
           </tr>
           {% endif %}
           {% endfor %}
           {% endfor %}
-        </table>
+        </table>        
+        
+        <script>
+        function toggleBib(event, bibFileName, index) {
+            // 阻止页面跳转到顶部
+            event.preventDefault();
+            
+            // 获取要显示的 bib 内容区域
+            const bibPreviewDiv = document.getElementById(`bibtex-preview-${index}`);
+            
+            // 检查内容区域的显示状态
+            if (bibPreviewDiv.style.display === 'none' || bibPreviewDiv.style.display === '') {
+                // 如果内容未显示，加载并显示内容
+                fetch(`/bibs/${bibFileName}`)
+                  .then(response => response.text())
+                  .then(data => {
+                      bibPreviewDiv.style.display = 'block';
+                      bibPreviewDiv.innerText = data;
+                  })
+                  .catch(error => console.error('Error loading BibTex file:', error));
+            } else {
+                // 如果内容已显示，则隐藏内容
+                bibPreviewDiv.style.display = 'none';
+            }
+        }
+        </script>                                        
         
         <br>
         <br>

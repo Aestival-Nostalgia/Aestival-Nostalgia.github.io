@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "<a href=\"https://www.mdpi.com/2072-4292/16/20/3866#\">Mapping Human Pressure for Nature Conservation: A Review</a>"
+date:   2024-10-16 00:22:59 +00:00
+image: /images/LC.jpg
+categories: RE
+author: "Quanxin Luo, Shicheng Li &#9993, Haifang Wang, <strong>Haonan Cheng</strong>."
+subtitle: "RNNs language models"
+course: "CS224N: Natural Language Processing"
+venue: "Remote Sensing ( SCI )"
+PDF: /pdfs/RS.pdf
+bibtex: RS.bib
+video1: https://www.youtube.com/watch?v=kTuZnmyR4Kc
+code1: https://www.youtube.com/watch?v=kTuZnmyR4Kc
+---
+This article systematically reviews methods for mapping human pressure on ecosystems and their application in conservation, highlighting significant techniques like land use intensity and human footprint analysis while addressing the pressing need for optimized protected area management and sustainable development strategies​.

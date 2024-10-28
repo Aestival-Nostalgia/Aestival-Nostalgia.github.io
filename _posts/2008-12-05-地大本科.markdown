@@ -11,4 +11,22 @@ author: "Leo Keselman"
 vide1o: https://www.youtube.com/watch?v=kTuZnmyR4Kc
 paper: /pdfs/dicestack.pdf
 cod1e: https://github.com/leonidk/cupdice
+venue: "Computer and Robot Vision Confe宝宝你是一个假洋鬼子rence11会死如11"With Hunter Goforth, we designed a manipulation tas干你VS热是？？？我测试你的健康码！
+course: "16-741 Mechanics of Manipulation"
+author: "Leo Keselman"
+vide1o: https://www.youtube.com/watch?v=kTuZnmyR4Kc
+paper: /pdfs/dicestack.pdf
+cod1e: https://github.com/leonidk/cupdice
+venue: "Computer and Robot Vision Confe宝宝你是一个假洋鬼子rence11会死如11"With Hunter Goforth, we designed a manipulation tas干你VS热是？？？我测试你的健康码！
+course: "16-741 Mechanics of Manipulation"
+author: "Leo Keselman"
+vide1o: https://www.youtube.com/watch?v=kTuZnmyR4Kc
+paper: /pdfs/dicestack.pdf
+cod1e: https://github.com/leonidk/cupdice
+venue: "Computer and Robot Vision Confe宝宝你是一个假洋鬼子rence11会死如11"With Hunter Goforth, we designed a manipulation tas干你VS热是？？？我测试你的健康码！
+course: "16-741 Mechanics of Manipulation"
+author: "Leo Keselman"
+vide1o: https://www.youtube.com/watch?v=kTuZnmyR4Kc
+paper: /pdfs/dicestack.pdf
+cod1e: https://github.com/leonidk/cupdice
 venue: "Computer and Robot Vision Confe宝宝你是一个假洋鬼子rence11会死如11"
