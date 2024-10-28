@@ -508,47 +508,61 @@
                 </script>
                 
                 <!-- HTML 部分确保正确生成按钮和画廊的 ID -->
-                <p class="gallery-info">These are some of my photos. Click the button to see more!</p>
-                <div class="button-container" style="text-align: center;">
-                  <button id="next-group-button-{{ post.id }}" class="ios-style-button">Next Group</button>
+                <!-- 在文本段落后面插入按钮 -->
+                <div style="display: flex; align-items: center; justify-content: center;">
+                  <button id="next-group-button-{{ post.id }}" class="ios-style-button" style="margin-left: 10px;">
+                    These are some of my photos. Click this button to see more.
+                  </button>
                 </div>
+                
                 <div class="image-gallery" id="image-gallery-{{ post.id }}">
                   {% assign first_group = post.extra_images[0].group %}
                   {% for image in first_group %}
                   <img src="{{ image }}" alt="extra image" class="extra-image" />
                   {% endfor %}
                 </div>
+                
                 {% endif %}
 
                 <!-- CSS 部分：按钮样式 -->
                 <style>
-                  .ios-style-button {
-                    display: inline-block;
-                    padding: 6px 12px; /* 缩小按钮尺寸 */
-                    font-size: 12px; /* 缩小字体 */
-                    color: #ffffff;
-                    background: linear-gradient(135deg, #4a90e2, #007aff);
-                    border: none;
-                    border-radius: 18px;
-                    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
-                    cursor: pointer;
-                    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-                    font-weight: bold;
-                    text-transform: uppercase;
-                    margin-top: 10px; /* 增加与注释的间距 */
-                  }
-                
-                  .ios-style-button:hover {
-                    background: linear-gradient(135deg, #007aff, #4a90e2);
-                    transform: scale(1.05);
-                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.15);
-                  }
-                
-                  .ios-style-button:active {
-                    background: linear-gradient(135deg, #005bb5, #4a90e2);
-                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-                    transform: scale(0.98);
-                  }
+                    .gallery-info {
+                      font-size: 14px;
+                      color: #555;
+                      margin-bottom: 5px; /* 控制与按钮之间的距离 */
+                      text-align: center;
+                      font-style: italic;
+                    }
+
+                    .ios-style-button {
+                      display: inline-block;
+                      padding: 6px 12px;
+                      font-size: 12px;
+                      color: #ffffff;
+                      background: linear-gradient(135deg, #4a90e2, #007aff);
+                      border: none;
+                      border-radius: 18px;
+                      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+                      cursor: pointer;
+                      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+                      font-weight: bold;
+                      font-style: italic; /* 设置按钮文字为斜体 */
+                      text-transform: none; 
+                      margin-top: -3px; /* 轻微上移按钮 */
+                      margin-bottom: 20px; /* 控制按钮下方空白 */
+                    }
+
+                    .ios-style-button:hover {
+                      background: linear-gradient(135deg, #007aff, #4a90e2);
+                      transform: scale(1.05);
+                      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.15);
+                    }
+
+                    .ios-style-button:active {
+                      background: linear-gradient(135deg, #005bb5, #4a90e2);
+                      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+                      transform: scale(0.98);
+                    }
                 
                   .gallery-info {
                     font-size: 14px;
