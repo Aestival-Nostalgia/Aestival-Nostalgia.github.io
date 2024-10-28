@@ -187,10 +187,10 @@
           </tr>
         </table>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"> <!--这里是学校的POST编辑处-->
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           {% for post in site.posts %}
           {% for cat in post.categories %}
-          {% if cat == 'rea' %}
+          {% if cat == 'xue' %}
           <tr>
             <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
               <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
@@ -198,15 +198,13 @@
             <td style="padding:2.5%;width:75%;vertical-align:middle">
               <h3>{{post.title}}</h3>
               <br>
+              {{post.authors}}
 
-              <em>{{post.sc}}</em>
               <br>
-
-              <em>{{post.venue}}</em>
+              <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
               <br>
-              
               {% if post.arxiv %}
-              <a href="{{post.arxiv}}">arxiv1111</a> /
+              <a href="{{post.arxiv}}">arxiv</a> /
               {% endif %}
               {% if post.video %}
               <a href="{{post.video}}">video</a> /
@@ -226,10 +224,8 @@
               {% if post.youtube %}
               <a href="{{post.youtube}}">youtube</a> /
               {% endif %}
-
               <p></p>
               {{ post.excerpt }}
-
             </td>
           </tr>
           {% endif %}
@@ -429,6 +425,7 @@
                 <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
               </td>
               <td style="padding:2.5%;width:75%;vertical-align:middle; text-align: justify !important;">
+                
                 <h3>{{post.title}}</h3>
                 <em>{{post.course}}</em>
 
@@ -470,13 +467,112 @@
 
                 <!-- Display additional images if the 'extra_images' attribute exists -->
                 {% if post.extra_images %}
-                  <p><em>Some of the photos I have taken:</em></p> <!-- 在图片展示之前添加这句话 -->
-                  <div class="image-gallery">
-                    {% for image in post.extra_images %}
-                    <img src="{{ image }}" alt="extra image" class="extra-image" />
-                    {% endfor %}
-                  </div>
+                <script>
+                  document.addEventListener("DOMContentLoaded", function() {
+                    // 删除 escape 过滤器，直接使用 jsonify 转换为 JSON
+                    var extraImages = JSON.parse('{{ post.extra_images | jsonify }}');
+                    var currentGroupIndex = 0;
+                
+                    // 引用生成的按钮和画廊 ID
+                    var button = document.getElementById('next-group-button-{{ post.id }}');
+                    var gallery = document.getElementById('image-gallery-{{ post.id }}');
+                
+                    // 输出按钮和画廊的 ID 以便调试
+                    console.log('Button ID:', 'next-group-button-{{ post.id }}');
+                    console.log('Gallery ID:', 'image-gallery-{{ post.id }}');
+                
+                    // 检查按钮和画廊是否存在
+                    if (button && gallery) {
+                      button.addEventListener('click', function() {
+                        currentGroupIndex = (currentGroupIndex + 1) % extraImages.length;
+                        var newGroup = extraImages[currentGroupIndex].group;
+                
+                        // 清空当前图片
+                        while (gallery.firstChild) {
+                          gallery.removeChild(gallery.firstChild);
+                        }
+                
+                        // 添加新组的图片
+                        newGroup.forEach(function(image) {
+                          var img = document.createElement('img');
+                          img.src = image;
+                          img.alt = 'extra image';
+                          img.className = 'extra-image';
+                          gallery.appendChild(img);
+                        });
+                      });
+                    } else {
+                      console.error('Button or gallery not found for post:', '{{ post.id }}');
+                    }
+                  });
+                </script>
+                
+                <!-- HTML 部分确保正确生成按钮和画廊的 ID -->
+                <p class="gallery-info">These are some of my photos. Click the button to see more!</p>
+                <div class="button-container" style="text-align: center;">
+                  <button id="next-group-button-{{ post.id }}" class="ios-style-button">Next Group</button>
+                </div>
+                <div class="image-gallery" id="image-gallery-{{ post.id }}">
+                  {% assign first_group = post.extra_images[0].group %}
+                  {% for image in first_group %}
+                  <img src="{{ image }}" alt="extra image" class="extra-image" />
+                  {% endfor %}
+                </div>
                 {% endif %}
+
+                <!-- CSS 部分：按钮样式 -->
+                <style>
+                  .ios-style-button {
+                    display: inline-block;
+                    padding: 6px 12px; /* 缩小按钮尺寸 */
+                    font-size: 12px; /* 缩小字体 */
+                    color: #ffffff;
+                    background: linear-gradient(135deg, #4a90e2, #007aff);
+                    border: none;
+                    border-radius: 18px;
+                    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+                    cursor: pointer;
+                    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    margin-top: 10px; /* 增加与注释的间距 */
+                  }
+                
+                  .ios-style-button:hover {
+                    background: linear-gradient(135deg, #007aff, #4a90e2);
+                    transform: scale(1.05);
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.15);
+                  }
+                
+                  .ios-style-button:active {
+                    background: linear-gradient(135deg, #005bb5, #4a90e2);
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+                    transform: scale(0.98);
+                  }
+                
+                  .gallery-info {
+                    font-size: 14px;
+                    color: #555;
+                    margin-bottom: 10px;
+                    text-align: center;
+                    font-style: italic;
+                  }
+                </style>
+                {% endif %}                
+                
+                <!-- 图片路径：D:\OneDrive - cug.edu.cn\Desktop\WEB\Aestival-Nostalgia.github.io\images -->
+
+                <!-- 
+                很高兴问题解决了！总结起来，问题的关键在于：
+                不必要的 escape 过滤器：
+                在 Jekyll 中，使用 escape 会对 JSON 字符串进行额外的转义，导致多余的反斜杠（\）等字符出现在 JSON 中。这些转义字符会让 JSON.parse 在解析字符串时遇到语法错误
+                （例如“Uncaught SyntaxError: Expected property name or '}' in JSON at position…”）。
+                在这个案例中，extra_images 通过 jsonify 转换成 JSON 字符串就已经足够，不需要额外的 escape 处理。
+                模板引擎和 JavaScript 的兼容性：
+                Liquid 模板引擎（Jekyll 使用的模板引擎）在处理数据时有时会引入多余的转义字符，这是在生成 HTML 时为了防止特殊字符在前端直接显示的问题。
+                但在 JavaScript 中解析 JSON 字符串时，这些额外的转义字符会干扰解析，导致语法错误。
+                因此，问题的根源在于不必要的字符转义，最终通过只使用 jsonify 生成纯净的 JSON 字符串解决了问题。 
+                --> 
 
               </td>
             </tr>
@@ -559,6 +655,8 @@
       </td>
     </tr>
   </table>
-</body>
 
+
+
+</body>
 </html>

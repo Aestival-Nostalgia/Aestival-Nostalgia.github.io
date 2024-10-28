@@ -4,16 +4,16 @@ title:  "Photography / 摄影"
 date:   2018-12-05 21:21:53 +00:00
 image: /images/s.png
 categories: CMU
-cou1rse: "16-741 Mechanics of Manipulation"
-auth1or: "Leo Keselman"
-vid1eo: https://www.youtube.com/watch?v=kTuZnmyR4Kc
-pap1er: /pdfs/dicestack.pdf
-cod1e: https://github.com/leonidk/cupdice
+id: photography
 extra_images:
-  - /images/DSC00862.png
-  - /images/BRI.png
-  - /images/DSC01624.png
-  - /images/TK.png
+  - group:
+      - /images/DSC0862.png
+      - /images/BRI.png
+  - group:
+      - /images/TK.png
+  - group:
+      - /images/gg28154743.png
+      - /images/cs224n-poster.png
 ---
 I enjoy using semi-professional photography equipment, VLOG cameras, mobile phones, CCD compact cameras, and other devices for my shoots. My preferred subjects include environmental portrait photography and environmental landscapes. Thanks to fieldwork opportunities in recent years, I have captured a large collection of images showcasing the natural landscapes of the Qinghai-Tibet Plateau in China. Additionally, I enjoy photographing urban environments and environmental portraits in bustling cities, and I work with friends to capture cosplay events. These photography activities have refined my aesthetic sense for print media and helped me develop some image processing skills. My photography skills also allow me to take on conference and event photography tasks within my graduate research group.
 <br><br>
