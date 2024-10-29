@@ -595,6 +595,21 @@
         
               <!-- CSS 样式 -->
               <style>
+
+                .extra-image {
+                  width: 100%;
+                  height: auto;
+                  max-width: 120px;
+                  max-height: 120px;
+                  transition: transform 0.3s ease, box-shadow 0.3s ease;
+                  cursor: pointer; /* 鼠标变成手型，表示可以点击 */
+                }
+
+                .extra-image:hover {
+                  transform: scale(1.1); /* 图片放大一点 */
+                  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+                }
+
                 .gallery-info {
                   font-size: 14px;
                   color: #555;
