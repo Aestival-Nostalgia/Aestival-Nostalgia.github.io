@@ -4,11 +4,7 @@ title:  "Rizhao No.1 Middle School of Shandong / 山东省日照第一中学"
 date:   2009-05-29 22:21:59 +00:00
 image: /images/crv19.png
 categories: xue
-author: "神里绫人"
-sc: "High School Diploma, Sep. 2015 - Jun. 2018"
-venue: "Computer and Robot Vision Conference"
-11arxiv: https://arxiv.org/abs/1904.05537
-1slides: /pdfs/crv19-slides.pdf
-1code: https://github.com/leonidk/direct_gmm
-1website: https://leonidk.github.io/direct_gmm/
+
+F11: "Hi"
+sc: "<em>High School Diploma, Sep. 2015 - Jun. 2018</em>"
 ---

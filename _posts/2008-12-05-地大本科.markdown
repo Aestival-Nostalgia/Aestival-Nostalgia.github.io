@@ -5,5 +5,3 @@ date:   2018-12-05 21:21:53 +00:00
 image: /images/CUG.jpg
 categories: xue
 ---
-With Hunter Goforth, we designed a manipulation tas干你VS热是？？？我测试你的健康码！
-course: "16-741 Mechanics of Manipulation"
