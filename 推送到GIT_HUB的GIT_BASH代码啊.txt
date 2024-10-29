@@ -4,12 +4,12 @@ git init
 
 git add .
 
-git commit -m “2408110534”
+git commit -m “2410300450”
 
 git push
 
 
 
 1.直接在WEB文件夹打开GIT BUSH
-2.挨个输入就好了
+2.挨个输入就好了!
 https://blog.csdn.net/weixin_45217038/article/details/130063592
