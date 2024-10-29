@@ -12,10 +12,68 @@ extra_images:
       - /images/3.png
       - /images/4.png
   - group:
-      - /images/1.png
+      - /images/P/DSC07387.JPG
+      - /images/P/DSC07423.JPG
+      - /images/P/DSC07486.JPG
+      - /images/P/DSC07582.JPG
+      - /images/P/DSC07685.JPG
+      - /images/P/DSC07708.JPG
+      - /images/P/DSC07818.JPG
+      - /images/P/IMG_0015.JPG
   - group:
-      - /images/gg28154743.png
-      - /images/cs224n-poster.png
+      - /images/P/IMG_0386.JPG
+      - /images/P/IMG_0446.JPG
+      - /images/P/IMG_1649.JPG
+      - /images/P/IMG_1659.JPG
+      - /images/P/IMG_5347.JPG
+      - /images/P/IMG_5688.JPG
+      - /images/P/IMG_5690.JPG
+      - /images/P/IMG_6070.JPG
+  - group:
+      - /images/P/IMG_6210.JPG
+      - /images/P/IMG_6285.JPG
+      - /images/P/IMG_6291.JPG
+      - /images/P/IMG_6338.JPG
+      - /images/P/IMG_6353.JPG
+      - /images/P/IMG_6355.JPG
+      - /images/P/IMG_6361.JPG
+      - /images/P/IMG_6404.JPG
+  - group:
+      - /images/P/IMG_6482.JPG
+      - /images/P/IMG_6558.JPG
+      - /images/P/IMG_6619.JPG
+      - /images/P/IMG_6783.JPG
+      - /images/P/IMG_6786.JPG
+      - /images/P/IMG_6919.JPG
+      - /images/P/IMG_7156.JPG
+      - /images/P/IMG_7171.JPG
+  - group:
+      - /images/P/IMG_7275.JPG
+      - /images/P/IMG_7655.JPG
+      - /images/P/IMG_7668.JPG
+      - /images/P/IMG_7824.JPG
+      - /images/P/IMG_7843.JPG
+      - /images/P/IMG_7864.JPG
+      - /images/P/IMG_7960.JPG
+      - /images/P/IMG_7968.JPG
+  - group:
+      - /images/P/IMG_8242.JPG
+      - /images/P/IMG_8250.JPG
+      - /images/P/IMG_8281.JPG
+      - /images/P/IMG_8293.JPG
+      - /images/P/IMG_8302.JPG
+      - /images/P/IMG_8311.JPG
+      - /images/P/IMG_8347.JPG
+      - /images/P/IMG_8565.JPG
+  - group:
+      - /images/P/IMG_8743.JPG
+      - /images/P/IMG_8768.JPG
+      - /images/P/IMG_9687.JPG
+      - /images/P/IMG_9710.JPG
+      - /images/P/IMG_9731.JPG
+      - /images/P/IMG_9857.JPG
+      - /images/P/K76A5140.JPG
+      - /images/P/K76A5177.JPG
 ---
 I enjoy using semi-professional photography equipment, VLOG cameras, mobile phones, CCD compact cameras, and other devices for my shoots. My preferred subjects include environmental portrait photography and environmental landscapes. Thanks to fieldwork opportunities in recent years, I have captured a large collection of images showcasing the natural landscapes of the Qinghai-Tibet Plateau in China. Additionally, I enjoy photographing urban environments and environmental portraits in bustling cities, and I work with friends to capture cosplay events. These photography activities have refined my aesthetic sense for print media and helped me develop some image processing skills. My photography skills also allow me to take on conference and event photography tasks within my graduate research group.
 <br><br>

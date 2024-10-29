@@ -481,221 +481,210 @@
         </table>
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            {% for post in site.posts %}
-            {% for cat in post.categories %}
-            {% if cat == 'CMU' %}
-            <tr>
-              <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-                <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-              </td>
-              <td style="padding:2.5%;width:75%;vertical-align:middle; text-align: justify !important;">
-                
-                <h3>{{post.title}}</h3>
-                <em>{{post.course}}</em>
-
-                {% if post.website %}
-                <a href="{{post.website}}">website</a> /
-                {% endif %}
-                {% if post.paper %}
-                <a href="{{post.paper}}">paper</a> /
-                {% endif %}
-                {% if post.patent %}
-                <a href="{{post.patent}}">patent</a> /
-                {% endif %}
-                {% if post.patent2 %}
-                <a href="{{post.patent2}}">patent #2</a> /
-                {% endif %}
-                {% if post.patent3 %}
-                <a href="{{post.patent3}}">patent #3</a> /
-                {% endif %}
-                {% if post.video %}
-                <a href="{{post.video}}">video</a> /
-                {% endif %}
-                {% if post.video2 %}
-                <a href="{{post.video2}}">video #2</a> /
-                {% endif %}
-                {% if post.code %}
-                <a href="{{post.code}}">code</a> /
-                {% endif %}
-                {% if post.poster %}
-                <a href="{{post.poster}}">poster</a> /
-                {% endif %}
-                {% if post.slides %}
-                <a href="{{post.slides}}">slides</a> /
-                {% endif %}
-
-                <!-- Excerpt with two-end justification -->
-                <p style="text-align: justify !important;">
-                  {{ post.excerpt }}
-                </p>
-
-                <!-- Display additional images if the 'extra_images' attribute exists -->
-                {% if post.extra_images %}
-                <script>
-                  document.addEventListener("DOMContentLoaded", function() {
-                    // 删除 escape 过滤器，直接使用 jsonify 转换为 JSON
-                    var extraImages = JSON.parse('{{ post.extra_images | jsonify }}');
-                    var currentGroupIndex = 0;
-                
-                    // 引用生成的按钮和画廊 ID
-                    var button = document.getElementById('next-group-button-{{ post.id }}');
-                    var gallery = document.getElementById('image-gallery-{{ post.id }}');
-                
-                    // 输出按钮和画廊的 ID 以便调试
-                    console.log('Button ID:', 'next-group-button-{{ post.id }}');
-                    console.log('Gallery ID:', 'image-gallery-{{ post.id }}');
-                
-                    // 检查按钮和画廊是否存在
-                    if (button && gallery) {
-                      button.addEventListener('click', function() {
-                        currentGroupIndex = (currentGroupIndex + 1) % extraImages.length;
-                        var newGroup = extraImages[currentGroupIndex].group;
-                
-                        // 清空当前图片
-                        while (gallery.firstChild) {
-                          gallery.removeChild(gallery.firstChild);
-                        }
-                
-                        // 添加新组的图片
-                        newGroup.forEach(function(image) {
-                          var img = document.createElement('img');
-                          img.src = image;
-                          img.alt = 'extra image';
-                          img.className = 'extra-image';
-                          gallery.appendChild(img);
-                        });
+          {% for post in site.posts %}
+          {% for cat in post.categories %}
+          {% if cat == 'CMU' %}
+          <tr>
+            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
+              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+            </td>
+            <td style="padding:2.5%;width:75%;vertical-align:middle; text-align: justify !important;">
+              
+              <h3>{{post.title}}</h3>
+              <em>{{post.course}}</em>
+        
+              {% if post.website %}
+              <a href="{{post.website}}">website</a> /
+              {% endif %}
+              {% if post.paper %}
+              <a href="{{post.paper}}">paper</a> /
+              {% endif %}
+              {% if post.patent %}
+              <a href="{{post.patent}}">patent</a> /
+              {% endif %}
+              {% if post.video %}
+              <a href="{{post.video}}">video</a> /
+              {% endif %}
+              {% if post.code %}
+              <a href="{{post.code}}">code</a> /
+              {% endif %}
+              
+              <!-- 图片展示描述 -->
+              <p style="text-align: justify !important;">
+                {{ post.excerpt }}
+              </p>
+        
+              <!-- 显示附加图片，如果存在 'extra_images' 属性 -->
+              {% if post.extra_images %}
+              <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                  var extraImages = JSON.parse('{{ post.extra_images | jsonify }}');
+                  var currentGroupIndex = 0;
+                  var button = document.getElementById('next-group-button-{{ post.id }}');
+                  var gallery = document.getElementById('image-gallery-{{ post.id }}');
+        
+                  if (button && gallery) {
+                    button.addEventListener('click', function() {
+                      currentGroupIndex = (currentGroupIndex + 1) % extraImages.length;
+                      var newGroup = extraImages[currentGroupIndex].group;
+                      while (gallery.firstChild) {
+                        gallery.removeChild(gallery.firstChild);
+                      }
+                      newGroup.forEach(function(image) {
+                        var img = document.createElement('img');
+                        img.src = image;
+                        img.alt = 'extra image';
+                        img.className = 'extra-image';
+                        gallery.appendChild(img);
                       });
-                    } else {
-                      console.error('Button or gallery not found for post:', '{{ post.id }}');
+                    });
+                  }
+                });
+              </script>
+              
+              <!-- 切换按钮 -->
+              <div style="display: flex; align-items: center; justify-content: center;">
+                <button id="next-group-button-{{ post.id }}" class="ios-style-button" style="margin-left: 10px;">
+                  These are some of my photos. Click this button to see more.
+                </button>
+              </div>
+              
+              <div class="image-gallery" id="image-gallery-{{ post.id }}">
+                {% assign first_group = post.extra_images[0].group %}
+                {% for image in first_group %}
+                <img src="{{ image }}" alt="extra image" class="extra-image" />
+                {% endfor %}
+              </div>
+              {% endif %}
+        
+              <!-- 图片放大显示的模态框 -->
+              <div id="imageModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); z-index: 1000; align-items: center; justify-content: center;">
+                <span id="closeModal" style="position: absolute; top: 20px; right: 30px; font-size: 30px; color: white; cursor: pointer;">&times;</span>
+                <img id="modalImage" src="" alt="enlarged image" style="max-width: 90%; max-height: 90%; border-radius: 8px;">
+              </div>
+        
+              <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                  const modal = document.getElementById("imageModal");
+                  const modalImage = document.getElementById("modalImage");
+                  const closeModal = document.getElementById("closeModal");
+        
+                  // 动态事件委托，为所有 .extra-image 元素添加点击事件
+                  document.addEventListener("click", function(event) {
+                    if (event.target.classList.contains("extra-image")) {
+                      modalImage.src = event.target.src;
+                      modal.style.display = "flex";
                     }
                   });
-                </script>
-                
-                <!-- HTML 部分确保正确生成按钮和画廊的 ID -->
-                <!-- 在文本段落后面插入按钮 -->
-                <div style="display: flex; align-items: center; justify-content: center;">
-                  <button id="next-group-button-{{ post.id }}" class="ios-style-button" style="margin-left: 10px;">
-                    These are some of my photos. Click this button to see more.
-                  </button>
-                </div>
-                
-                <div class="image-gallery" id="image-gallery-{{ post.id }}">
-                  {% assign first_group = post.extra_images[0].group %}
-                  {% for image in first_group %}
-                  <img src="{{ image }}" alt="extra image" class="extra-image" />
-                  {% endfor %}
-                </div>
-                
-                {% endif %}
-
-                <!-- CSS 部分：按钮样式 -->
-                <style>
-                    .gallery-info {
-                      font-size: 14px;
-                      color: #555;
-                      margin-bottom: 5px; /* 控制与按钮之间的距离 */
-                      text-align: center;
-                      font-style: italic;
+        
+                  // 点击 X 关闭模态框
+                  closeModal.addEventListener("click", function() {
+                    modal.style.display = "none";
+                  });
+        
+                  // 点击模态框的空白区域关闭
+                  modal.addEventListener("click", function(event) {
+                    if (event.target === modal) {
+                      modal.style.display = "none";
                     }
-
-                    .ios-style-button {
-                      display: inline-block;
-                      padding: 6px 12px;
-                      font-size: 12px;
-                      color: #ffffff;
-                      background: linear-gradient(135deg, #838181, #202224);
-                      border: none;
-                      border-radius: 18px;
-                      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
-                      cursor: pointer;
-                      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-                      font-weight: bold;
-                      font-style: italic; /* 设置按钮文字为斜体 */
-                      text-transform: none; 
-                      margin-top: -3px; /* 轻微上移按钮 */
-                      margin-bottom: 20px; /* 控制按钮下方空白 */
-                    }
-
-                    .ios-style-button:hover {
-                      background: linear-gradient(135deg, #007aff, #4a90e2);
-                      transform: scale(1.05);
-                      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.15);
-                    }
-
-                    .ios-style-button:active {
-                      background: linear-gradient(135deg, #005bb5, #4a90e2);
-                      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-                      transform: scale(0.98);
-                    }
-                
-                  .gallery-info {
-                    font-size: 14px;
-                    color: #555;
-                    margin-bottom: 10px;
-                    text-align: center;
-                    font-style: italic;
+                  });
+                });
+              </script>
+        
+              <!-- CSS 样式 -->
+              <style>
+                .gallery-info {
+                  font-size: 14px;
+                  color: #555;
+                  margin-bottom: 10px;
+                  text-align: center;
+                  font-style: italic;
+                }
+        
+                .ios-style-button {
+                  display: inline-block;
+                  padding: 6px 12px;
+                  font-size: 12px;
+                  color: #ffffff;
+                  background: linear-gradient(135deg, #838181, #202224);
+                  border: none;
+                  border-radius: 18px;
+                  cursor: pointer;
+                  font-weight: bold;
+                  font-style: italic;
+                  text-transform: none;
+                  margin-top: -3px;
+                  margin-bottom: 20px;
+                }
+        
+                .ios-style-button:hover {
+                  background: linear-gradient(135deg, #007aff, #4a90e2);
+                  transform: scale(1.05);
+                }
+        
+                .image-gallery {
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 10px;
+                  margin-top: 10px;
+                }
+        
+                .extra-image {
+                  width: 100%;
+                  height: auto;
+                  max-width: 120px;
+                  max-height: 120px;
+                }
+        
+                @media (max-width: 768px) {
+                  .extra-image {
+                    max-width: 75px;
+                    max-height: 75px;
                   }
-                </style>              
-                
-                <!-- 图片路径：D:\OneDrive - cug.edu.cn\Desktop\WEB\Aestival-Nostalgia.github.io\images -->
-
-                <!-- 
-                很高兴问题解决了！总结起来，问题的关键在于：
-                不必要的 escape 过滤器：
-                在 Jekyll 中，使用 escape 会对 JSON 字符串进行额外的转义，导致多余的反斜杠（\）等字符出现在 JSON 中。这些转义字符会让 JSON.parse 在解析字符串时遇到语法错误
-                （例如“Uncaught SyntaxError: Expected property name or '}' in JSON at position…”）。
-                在这个案例中，extra_images 通过 jsonify 转换成 JSON 字符串就已经足够，不需要额外的 escape 处理。
-                模板引擎和 JavaScript 的兼容性：
-                Liquid 模板引擎（Jekyll 使用的模板引擎）在处理数据时有时会引入多余的转义字符，这是在生成 HTML 时为了防止特殊字符在前端直接显示的问题。
-                但在 JavaScript 中解析 JSON 字符串时，这些额外的转义字符会干扰解析，导致语法错误。
-                因此，问题的根源在于不必要的字符转义，最终通过只使用 jsonify 生成纯净的 JSON 字符串解决了问题。 
-                --> 
-
-              </td>
-            </tr>
-            {% endif %}
-            {% endfor %}
-            {% endfor %}
-          </table>
+                }
+        
+                @media (max-width: 480px) {
+                  .extra-image {
+                    max-width: 60px;
+                    max-height: 60px;
+                  }
+                }
+        
+                #imageModal {
+                  display: none;
+                  position: fixed;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background-color: rgba(0, 0, 0, 0.8);
+                  z-index: 1000;
+                  align-items: center;
+                  justify-content: center;
+                }
+        
+                #closeModal {
+                  position: absolute;
+                  top: 20px;
+                  right: 30px;
+                  font-size: 30px;
+                  color: white;
+                  cursor: pointer;
+                }
+        
+                #modalImage {
+                  max-width: 90%;
+                  max-height: 90%;
+                  border-radius: 8px;
+                }
+              </style>
+            </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
         </table>
-
-        <!-- CSS Style -->
-        <style>
-          /* Flex layout to make images wrap automatically */
-          .image-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
-          }
-
-          /* 图片在网页端的最大宽度和高度（60%大小） */
-          .extra-image {
-            width: 100%;
-            height: auto; /* 保持宽高比 */
-            max-width: 120px; /* 调整为当前的60% */
-            max-height: 120px; /* 调整为当前的60% */
-          }
-
-          /* Media query for small screens (mobile devices) */
-          @media (max-width: 768px) {
-            .extra-image {
-              flex-basis: 30%;
-              max-width: 75px; /* 调整为当前的50% */
-              max-height: 75px; /* 调整为当前的50% */
-            }
-          }
-
-          /* Media query for even smaller screens (very small mobile devices) */
-          @media (max-width: 480px) {
-            .extra-image {
-              flex-basis: 45%;
-              max-width: 60px; /* 调整为当前的50% */
-              max-height: 60px; /* 调整为当前的50% */
-            }
-          }
-        </style>
+        
 
         <br>
         <br>
