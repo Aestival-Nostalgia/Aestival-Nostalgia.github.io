@@ -1,7 +1,9 @@
 ---
 layout: post
-title:  "Institute of Geographic Sciences and Natural Resources Research, <br>Chinese Academy of Sciences / 中国科学院地理科学与资源研究所"
+title:  "<a href=\"https://www.igsnrr.ac.cn\" target=\"_blank\">Institute of Geographic Sciences and Natural Resources Research, <br>Chinese Academy of Sciences / 中国科学院地理科学与资源研究所</a>"
 date:   2023-06-07 22:21:59 +00:00
 image: /images/dashpoint.png
 categories: xue
+
+sc: "<em>Visiting Student in <b>Physical Geography</b> (Phase 1), Nov. 2021 - Jun. 2022 <br> Visiting Student in <b>Physical Geography</b> (Phase 2), Jul. 2023 - May. 2025 (Expected)</em>"
 ---

@@ -1,7 +1,10 @@
 ---
 layout: post
-title:  "China University of Geosciences / 中国地质大学（武汉）"
+title:  "<a href=\"https://www.cug.edu.cn\" target=\"_blank\">China University of Geosciences / 中国地质大学（武汉）</a>"
 date:   2018-12-05 21:21:53 +00:00
 image: /images/CUG.jpg
 categories: xue
+
+sc: "<em>Bachelor of <b>Engineering</b> in <b>Land Resource Management</b>, Sep. 2018 - Jun. 2022</em>"
+F1: "Thesis title: Analysis of Conservation Effectiveness in the Qomolangma National Nature Reserve Based on Land Cover Change"
 ---

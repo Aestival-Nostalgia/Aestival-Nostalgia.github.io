@@ -1,7 +1,10 @@
 ---
 layout: post
-title:  "China University of Geosciences / 中国地质大学（武汉）"
+title:  "<a href=\"https://www.cug.edu.cn\" target=\"_blank\">China University of Geosciences / 中国地质大学（武汉）</a>"
 date:   2023-12-05 21:21:53 +00:00
 image: /images/cupdice.png
 categories: xue
+
+sc: "<em>Master of <b>Management (MPhil-equivalent)</b> in <b>Land Resource Management</b>, <br>Sep. 2022 - Jun. 2025 (Expected)</em>"
+F1: "Thesis title: Remote Sensing Extraction and Spatio-Temporal Feature Analysis of Artificial Grasslands in the Sanjiangyuan Region"
 ---

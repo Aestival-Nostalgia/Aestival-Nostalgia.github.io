@@ -154,23 +154,15 @@
                 <br>
                 
                 {% capture links %}
-                
                   {% if post.s1 %}<a href="{{ post.s1 }}" target="_blank">S1</a>{% endif %}
-        
                   {% if post.bibtex %}{% if post.s1 %} / {% endif %}<a href="#" onclick="toggleBib(event, '{{ post.bibtex }}', {{ forloop.index }})">BibTex</a>{% endif %}
-        
                   {% if post.arxiv %}{% if post.bibtex or post.s1 %} / {% endif %}<a href="{{ post.arxiv }}">arxiv</a>{% endif %}
-        
                   {% if post.video %}{% if post.bibtex or post.arxiv or post.s1 %} / {% endif %}<a href="{{ post.video }}">Video</a>{% endif %}
-        
                   {% if post.code %}{% if post.bibtex or post.arxiv or post.video or post.s1 %} / {% endif %}<a href="{{ post.code }}">code</a>{% endif %}
-        
                   {% if post.poster %}{% if post.bibtex or post.arxiv or post.video or post.code or post.s1 %} / {% endif %}<a href="{{ post.poster }}">poster</a>{% endif %}
-        
                   {% if post.PDF %}{% if post.bibtex or post.arxiv or post.video or post.code or post.poster or post.s1 %} / {% endif %}<a href="{{ post.PDF }}" target="_blank">PDF</a>{% endif %}
-        
                 {% endcapture %}
-                
+          
                 {{ links }}
                 
                 <p></p>
@@ -225,7 +217,7 @@
                 {% if post.poster %}{% if post.bibtex or post.arxiv or post.video or post.code %} / {% endif %}<a href="{{ post.poster }}">poster</a>{% endif %}
                 {% if post.PDF %}{% if post.bibtex or post.arxiv or post.video or post.code or post.poster %} / {% endif %}<a href="{{ post.PDF }}" target="_blank">PDF</a>{% endif %}
               {% endcapture %}
-              
+
               {{ links }}
               
               <p></p>
