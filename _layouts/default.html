@@ -200,7 +200,6 @@
         
         <br>
         <br>
-        <br>
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
@@ -214,26 +213,26 @@
         </table>
 
         <!-- 教育背景 -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <table style="width:100%; border-spacing:0px; border-collapse:separate; margin:auto;">
           {% for post in site.posts %}
           {% for cat in post.categories %}
             {% if cat == 'xue' %}
             <tr>
-              <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-                <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+              <td style="padding:2.5%; width:25%; vertical-align:middle; min-width:120px;">
+                <img src="/tn{{post.image}}" alt="project image" style="width:100%; border-radius:8px;">
               </td>
-              <td style="padding:2.5%;width:75%;vertical-align:middle">
-                <h3>{{ post.title }}</h3>
-                
+              <td style="padding:2.5%; width:75%; vertical-align:middle;">
+                <h3 style="margin-bottom: 5px; font-weight: bold; color: #2c3e50; font-size: 1.4em;">{{ post.title }}</h3>
+
                 <!-- 标签部分 -->
                 <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px;">
                   {% for tag in post.tags %}
-                  <span style="padding: 3px 8px; border-radius: 10px; background: linear-gradient(135deg, rgba(72, 145, 220, 0.3), rgba(255, 255, 255, 0.2)); backdrop-filter: blur(10px); font-size: 0.8em; color: #2c3e50; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); line-height: 1;">
+                  <span style="padding: 3px 8px; border-radius: 10px; background: linear-gradient(135deg, rgba(72, 145, 220, 0.3), rgba(255, 255, 255, 0.2)); font-size: 0.8em; color: #2c3e50; line-height: 1;">
                     {{ tag }}
                   </span>
                   {% endfor %}
                 </div>
-                
+
                 <br>
                 {{ post.sc }}
                 <br>
@@ -249,7 +248,6 @@
                   {% if post.poster %}{% if bibtex or arxiv or video or code or s1 %} / {% endif %}<a href="{{ post.poster }}">poster</a>{% endif %}
                   {% if post.PDF %}{% if bibtex or arxiv or video or code or poster or s1 %} / {% endif %}<a href="{{ post.PDF }}" target="_blank">PDF</a>{% endif %}
                 {% endcapture %}
-          
                 {{ links }}
 
                 <p></p>
@@ -257,13 +255,13 @@
 
                 <!-- 职务部分 -->
                 {% if post.roles %}
-                <div style="margin-top: 15px; padding: 12px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(230, 230, 230, 0.3)); border-radius: 12px; font-size: 0.9em; color: #666; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); backdrop-filter: blur(15px);">
-                  <h4 style="font-size: 0.9em; margin: 0 0 5px; color: #555; font-weight: normal; opacity: 0.8;">Organizations and Clubs / 学生工作和社团活动</h4>
+                <div style="margin-top: 8px; padding: 8px; background-color: rgba(245, 245, 245, 0.4); border-radius: 6px; font-size: 0.9em; color: #666;">
+                  <h4 style="font-size: 0.85em; margin: 0 0 4px; color: #666; font-weight: normal;">Organizations and Clubs / 学生工作和社团活动</h4>
                   <ul style="list-style-type: none; padding-left: 0; margin: 0;">
                     {% for role in post.roles %}
-                    <li style="margin-top: 4px; line-height: 1.4;">
-                      <span style="color: #444; font-weight: bold; opacity: 0.9;">{{ role.title }}</span>: 
-                      <span style="font-size: 0.9em; color: #555; opacity: 0.8;">{{ role.description }}</span>
+                    <li style="margin-top: 3px; line-height: 1.4;">
+                      <span style="color: #444; font-weight: bold;">{{ role.title }}</span>: 
+                      <span style="color: #555;">{{ role.description }}</span>
                     </li>
                     {% endfor %}
                   </ul>
@@ -272,19 +270,18 @@
 
                 <!-- 项目履历部分 -->
                 {% if post.projects %}
-                <div style="margin-top: 15px; padding: 12px; background: linear-gradient(135deg, rgba(230, 245, 255, 0.5), rgba(210, 230, 250, 0.3)); border-radius: 12px; font-size: 0.9em; color: #555; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); backdrop-filter: blur(12px); border: 1px solid rgba(200, 220, 240, 0.3);">
-                  <h4 style="font-size: 0.9em; margin: 0 0 5px; color: #556; font-weight: normal; opacity: 0.9;">Project Experience / 项目履历</h4>
+                <div style="margin-top: 8px; padding: 8px; background-color: rgba(235, 245, 255, 0.4); border-radius: 6px; font-size: 0.9em; color: #555;">
+                  <h4 style="font-size: 0.85em; margin: 0 0 4px; color: #556; font-weight: normal;">Project Experience / 项目履历</h4>
                   <ul style="list-style-type: none; padding-left: 0; margin: 0;">
                     {% for project in post.projects %}
-                    <li style="margin-top: 4px; line-height: 1.4;">
-                      <span style="color: #556; font-weight: bold; opacity: 0.9;">{{ project.title }}</span>: 
-                      <span style="font-size: 0.9em; color: #666; opacity: 0.8;">{{ project.description }}</span>
+                    <li style="margin-top: 3px; line-height: 1.4;">
+                      <span style="color: #556; font-weight: bold;">{{ project.title }}</span>: 
+                      <span style="color: #666;">{{ project.description }}</span>
                     </li>
                     {% endfor %}
                   </ul>
                 </div>
                 {% endif %}
-
               </td>
             </tr>
             {% endif %}
@@ -314,57 +311,55 @@
             {% if cat == 'RE' %}
             <tr>
               <td style="padding:2.5%; width:25%; vertical-align:middle; min-width:120px;">
-                <img src="/tn{{post.image}}" alt="project image" style="width:100%; max-width:100%; border-radius:12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                <img src="/tn{{post.image}}" alt="project image" style="width:100%; max-width:100%; border-radius:8px;">
               </td>
               <td style="padding:2.5%; width:75%; vertical-align:middle;">
-                <h3 style="margin-bottom: 8px; font-weight: bold; color: #2c3e50; font-size: 1.4em; line-height: 1.3; text-shadow: 0px 1px 3px rgba(0,0,0,0.1);">{{ post.title }}</h3>
+                <h3 style="margin-bottom: 8px; font-weight: bold; color: #2c3e50; font-size: 1.4em; line-height: 1.3;">{{ post.title }}</h3>
 
-                <!-- 作者和发布来源部分 -->
-                <div style="padding: 12px; border-radius: 10px; background: linear-gradient(135deg, rgba(245, 245, 245, 0.6), rgba(255, 255, 255, 0.3)); box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); color: #555; margin-bottom: 12px; display: flex; align-items: center; justify-content: flex-start; gap: 15px;">
-                  <span style="font-size: 0.95em; font-weight: 500; color: #2c3e50;">{{ post.author }}</span>
-                  <div style="width: 2px; height: 18px; background-color: rgba(200, 200, 200, 0.4); border-radius: 1px;"></div>
-                  <span style="font-size: 0.9em; color: #3a3a3a; font-style: italic;">{{ post.venue }}, {{ post.date | date: "%Y" }}</span>
-                </div>
+                <!-- 作者和发布来源部分 - 默认排版 -->
+                <p style="color: #2c3e50; font-size: 0.95em;">
+                  {{ post.author }}<br><em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
+                </p>
 
                 <!-- 出版物简介 -->
-                <p style="color: #444; font-size: 0.95em; line-height: 1.6; font-weight: 400; letter-spacing: 0.3px;">{{ post.excerpt }}</p>
+                <p style="color: #444; font-size: 0.95em; line-height: 1.6; font-weight: 400;">{{ post.excerpt }}</p>
 
                 <!-- 链接部分 -->
-                <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;">
+                <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
                   {% if post.bibtex %}
-                    <a href="#" onclick="toggleBib(event, '{{ post.bibtex }}', '{{ post.id }}')" style="padding: 4px 10px; border-radius: 4px; background: rgba(245, 245, 245, 0.8); color: #2c3e50; font-size: 0.85em; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(220, 220, 220, 0.5); display: inline-block; box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.05);">
+                    <a href="#" onclick="toggleBib(event, '{{ post.bibtex }}', '{{ post.id }}')" style="padding: 3px 8px; border-radius: 4px; background: linear-gradient(135deg, #d0ebff, #f0faff); color: #2c3e50; font-size: 0.8em; text-decoration: none; border: 1px solid rgba(0, 150, 255, 0.1); transition: all 0.3s ease; display: inline-block;">
                       BibTex
                     </a>
                   {% endif %}
                   {% if post.arxiv %}
-                    <a href="{{ post.arxiv }}" style="padding: 4px 10px; border-radius: 4px; background: rgba(245, 245, 245, 0.8); color: #2c3e50; font-size: 0.85em; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(220, 220, 220, 0.5); display: inline-block; box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.05);">
+                    <a href="{{ post.arxiv }}" style="padding: 3px 8px; border-radius: 4px; background: linear-gradient(135deg, #d0ebff, #f0faff); color: #2c3e50; font-size: 0.8em; text-decoration: none; border: 1px solid rgba(0, 150, 255, 0.1); transition: all 0.3s ease; display: inline-block;">
                       arxiv
                     </a>
                   {% endif %}
                   {% if post.video %}
-                    <a href="{{ post.video }}" style="padding: 4px 10px; border-radius: 4px; background: rgba(245, 245, 245, 0.8); color: #2c3e50; font-size: 0.85em; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(220, 220, 220, 0.5); display: inline-block; box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.05);">
+                    <a href="{{ post.video }}" style="padding: 3px 8px; border-radius: 4px; background: linear-gradient(135deg, #d0ebff, #f0faff); color: #2c3e50; font-size: 0.8em; text-decoration: none; border: 1px solid rgba(0, 150, 255, 0.1); transition: all 0.3s ease; display: inline-block;">
                       Video
                     </a>
                   {% endif %}
                   {% if post.code %}
-                    <a href="{{ post.code }}" style="padding: 4px 10px; border-radius: 4px; background: rgba(245, 245, 245, 0.8); color: #2c3e50; font-size: 0.85em; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(220, 220, 220, 0.5); display: inline-block; box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.05);">
+                    <a href="{{ post.code }}" style="padding: 3px 8px; border-radius: 4px; background: linear-gradient(135deg, #d0ebff, #f0faff); color: #2c3e50; font-size: 0.8em; text-decoration: none; border: 1px solid rgba(0, 150, 255, 0.1); transition: all 0.3s ease; display: inline-block;">
                       code
                     </a>
                   {% endif %}
                   {% if post.poster %}
-                    <a href="{{ post.poster }}" style="padding: 4px 10px; border-radius: 4px; background: rgba(245, 245, 245, 0.8); color: #2c3e50; font-size: 0.85em; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(220, 220, 220, 0.5); display: inline-block; box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.05);">
+                    <a href="{{ post.poster }}" style="padding: 3px 8px; border-radius: 4px; background: linear-gradient(135deg, #d0ebff, #f0faff); color: #2c3e50; font-size: 0.8em; text-decoration: none; border: 1px solid rgba(0, 150, 255, 0.1); transition: all 0.3s ease; display: inline-block;">
                       poster
                     </a>
                   {% endif %}
                   {% if post.PDF %}
-                    <a href="{{ post.PDF }}" target="_blank" style="padding: 4px 10px; border-radius: 4px; background: rgba(245, 245, 245, 0.8); color: #2c3e50; font-size: 0.85em; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(220, 220, 220, 0.5); display: inline-block; box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.05);">
+                    <a href="{{ post.PDF }}" target="_blank" style="padding: 3px 8px; border-radius: 4px; background: linear-gradient(135deg, #d0ebff, #f0faff); color: #2c3e50; font-size: 0.8em; text-decoration: none; border: 1px solid rgba(0, 150, 255, 0.1); transition: all 0.3s ease; display: inline-block;">
                       PDF
                     </a>
                   {% endif %}
                 </div>
 
-                <!-- BibTex 预览框，带有玻璃拟态效果 -->
-                <div id="bibtex-preview-{{ post.id }}" style="display:none; padding: 15px; border-radius: 12px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(245, 245, 255, 0.4)); backdrop-filter: blur(12px); border: 1px solid rgba(200, 220, 240, 0.3); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); font-family: 'Open Sans', sans-serif; margin-top: 12px; font-size: 0.85em; color: #2e4057;">
+                <!-- BibTex 预览框，扁平化样式 -->
+                <div id="bibtex-preview-{{ post.id }}" style="display:none; padding: 15px; border-radius: 8px; background-color: rgba(245, 245, 245, 0.6); border: 1px solid rgba(200, 200, 200, 0.3); font-family: 'Open Sans', sans-serif; margin-top: 10px; font-size: 0.85em; color: #2e4057;">
                   <pre style="margin: 0; font-family: monospace; white-space: pre-wrap; word-wrap: break-word; color: #1c2e4a;">
                     <!-- BibTex 内容会在这里显示 -->
                   </pre>
@@ -407,204 +402,218 @@
         <br>
         <br>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <!-- 特质部分 -->
+        <table style="width:100%; border-spacing:0; border-collapse:separate; margin:auto;">
           <tr>
-              <td style="padding:2.5%;width:100%;vertical-align:middle">
+            <td style="padding:2.5%; width:100%; vertical-align:middle;">
 
-                  <h2>Characteristics / 特质</h2>
-                  <p>
-                      I'm interested in creative planning, design work, and organizing content systematically.
-                      <br>我对创意策划、设计工作和系统地组织内容感兴趣？
-                  </p>
+              <h2 style="font-size: 1.5em; color: #000;">Characteristics / 特质</h2>
+              <p style="color: #333; font-size: 1em; line-height: 1.6;">
+                  I'm interested in creative planning, design work, and organizing content systematically.
+                  <br>我对创意策划、设计工作和系统地组织内容感兴趣。
+              </p>
 
-                  <div style="display: flex; align-items: center; margin-top: 10px;">
-                    <div style="flex: 0 0 40px; display: flex; justify-content: center;">
-                        <!-- 内联 "灯泡" 图标 -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M9 18h6"></path>
-                            <path d="M10 22h4"></path>
-                            <path d="M3 11a9 9 0 1 1 18 0c0 3.3-1.6 5.5-4 7h-2c-2.4-1.5-4-3.7-4-7"></path>
-                        </svg>
-                    </div>
-                    <div style="flex: 1;">
-                        <span style="display: block; margin-left: 10px;">
-                            I enjoy creative work, planning new projects, and savoring every detail of the design process.
-                            <br>喜欢创意、策划和设计工作：我对创意工作充满热情，喜欢策划新的项目，并享受设计过程中的每个细节。
-                        </span>
-                    </div>
-                </div>
+              <!-- 特质条目列表 -->
+              <div style="margin-top: 15px;">
                 
-                <div style="display: flex; align-items: center; margin-top: 10px;">
-                    <div style="flex: 0 0 40px; display: flex; justify-content: center;">
-                        <!-- 内联 "网格" 图标 -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="7" height="7"></rect>
-                            <rect x="14" y="3" width="7" height="7"></rect>
-                            <rect x="14" y="14" width="7" height="7"></rect>
-                            <rect x="3" y="14" width="7" height="7"></rect>
-                        </svg>
-                    </div>
-                    <div style="flex: 1;">
-                        <span style="display: block; margin-left: 10px;">
-                            I like to organize work content systematically: I tend to systematize work content, ensuring that each step is orderly and using efficiency tools to optimize workflow.
-                            <br>喜欢条理化工作内容：我倾向于把工作内容系统化，确保每个步骤都有条不繁地进行，使用效率工具来优化工作流程。
-                        </span>
-                    </div>
-                </div>
-                
-                <div style="display: flex; align-items: center; margin-top: 10px;">
-                    <div style="flex: 0 0 40px; display: flex; justify-content: center;">
-                        <!-- 内联 "检查" 图标 -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M9 12l2 2l4 -4"></path>
-                            <circle cx="12" cy="12" r="10"></circle>
-                        </svg>
-                    </div>
-                    <div style="flex: 1;">
-                        <span style="display: block; margin-left: 10px;">
-                            I like high completeness of work: I pursue high-quality work results, value details, and am committed to ensuring that each project is completed to the highest standards.
-                            <br>喜欢高完成度的工作：我追求高质量的工作成果，重视细节，致力于确保每个项目的完成度达到最高标准。
-                        </span>
-                    </div>
-                </div>
-
-                <div style="display: flex; align-items: center; margin-top: 10px;">
-                  <div style="flex: 0 0 40px; display: flex; justify-content: center;">
-                      <!-- 内联 "山峰" 图标 -->
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M3 18L9 5l4 9l3-5l4 9H3z"></path>
-                      </svg>
+                <div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #e0e0e0;">
+                  <div style="flex: 0 0 24px; text-align: center; color: #000;">
+                    <!-- 灯泡图标 -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M9 18h6"></path>
+                      <path d="M10 22h4"></path>
+                      <path d="M3 11a9 9 0 1 1 18 0c0 3.3-1.6 5.5-4 7h-2c-2.4-1.5-4-3.7-4-7"></path>
+                    </svg>
                   </div>
-                  <div style="flex: 1;">
-                      <span style="display: block; margin-left: 10px;">
-                          I have good stress resistance: I can maintain calm and focus under pressure, ensuring that tasks are smoothly completed in a high-intensity environment.
-                          <br>拥有较好的抗压能力：我能够在压力下保持冷静和专注，确保任务在高强度的环境中顺利完成。
-                      </span>
+                  <div style="flex: 1; margin-left: 8px; color: #333;">
+                    <strong style="color: #000;">Creative Work</strong><br>
+                    I enjoy creative work, planning new projects, and savoring every detail of the design process.
+                    <br>喜欢创意、策划和设计工作：我对创意工作充满热情，喜欢策划新的项目，并享受设计过程中的每个细节。
                   </div>
-              </div>              
-
-              </td>
-            </tr>
-          </table>              
-      
-      <br>
-      <br>
-      <br>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-              <td style="padding:2.5%;width:100%;vertical-align:middle">
-
-                  <h2>Skill Set / 技能组合</h2>
-                  <p>
-                      I'm interested in computer vision, machine learning, optimization, graphics, and robotics.
-                  </p>
-
-                  <div style="display: flex; align-items: center; margin-top: 10px;">
-                    <div style="flex: 0 0 40px; display: flex; justify-content: center;">
-                        <!-- 内联 "CPU" 图标 -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="4" y="4" width="16" height="16" rx="2"></rect>
-                            <path d="M9 9h6v6H9z"></path>
-                            <path d="M3 9h1M3 15h1M20 9h1M20 15h1M9 3v1M15 3v1M9 20v1M15 20v1"></path>
-                        </svg>
-                    </div>
-                    <div style="flex: 1;">
-                        <span style="display: block; margin-left: 10px;">编程和基于编程的数据分析与统计：我拥有编程的知识，如今，在像GPT这样的大模型的帮助下，我可以自助的实现非常多编程项目，云平台GEE</span>
-                    </div>
                 </div>
-                
-                <div style="display: flex; align-items: center; margin-top: 10px;">
-                    <div style="flex: 0 0 40px; display: flex; justify-content: center;">
-                        <!-- 内联 "地图针" 图标 -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                    </div>
-                    <div style="flex: 1;">
-                        <span style="display: block; margin-left: 10px;">地理制图和地理分析：我使用多种工具完成符合规范的地图制作，我可以熟练使用ArcGIS</span>
-                    </div>
-                </div>
-                
-                <div style="display: flex; align-items: center; margin-top: 10px;">
-                    <div style="flex: 0 0 40px; display: flex; justify-content: center;">
-                        <!-- 内联 "设置" 图标 -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="3"></circle>
-                            <path d="M19.4 15a1.5 1.5 0 0 0 .3 1.6l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.5 1.5 0 0 0-1.6-.3"></path>
-                            <path d="M4.6 15a1.5 1.5 0 0 1-.3 1.6l-.1.1a2 2 0 1 0 2.8 2.8l.1-.1a1.5 1.5 0 0 1 1.6-.3"></path>
-                        </svg>
-                    </div>
-                    <div style="flex: 1;">
-                        <span style="display: block; margin-left: 10px;">工作流规划：我使用多种效率软件（如Notion、Git等）规划我的工作流，尽管这听上去并不像一种技能，但这确实是我的工作习惯和常用方法。</span>
-                    </div>
-                </div>
-                
-                <div style="display: flex; align-items: center; margin-top: 10px;">
-                  <div style="flex: 0 0 40px; display: flex; justify-content: center;">
-                      <!-- 内联 "文档" 图标 -->
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"></path>
-                          <path d="M14 2v6h6"></path>
-                      </svg>
+
+                <div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #e0e0e0;">
+                  <div style="flex: 0 0 24px; text-align: center; color: #000;">
+                    <!-- 网格图标 -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="3" width="7" height="7"></rect>
+                      <rect x="14" y="3" width="7" height="7"></rect>
+                      <rect x="14" y="14" width="7" height="7"></rect>
+                      <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
                   </div>
-                  <div style="flex: 1;">
-                      <span style="display: block; margin-left: 10px;">文稿、演示文稿排版、其他办公组件：我使用LATEX、WORD等进行写作，我使用PPT等进行演示文稿的制作，并且我对PPT的</span>
+                  <div style="flex: 1; margin-left: 8px; color: #333;">
+                    <strong style="color: #000;">Systematic Organization</strong><br>
+                    I like to organize work content systematically, ensuring that each step is orderly and optimized.
+                    <br>喜欢条理化工作内容：我倾向于把工作内容系统化，确保每个步骤都有条不紊地进行。
                   </div>
-              </div>              
-                  
-              </td>
+                </div>
+
+                <div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #e0e0e0;">
+                  <div style="flex: 0 0 24px; text-align: center; color: #000;">
+                    <!-- 检查图标 -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M9 12l2 2l4 -4"></path>
+                      <circle cx="12" cy="12" r="10"></circle>
+                    </svg>
+                  </div>
+                  <div style="flex: 1; margin-left: 8px; color: #333;">
+                    <strong style="color: #000;">High Standards</strong><br>
+                    I pursue high-quality work, value details, and ensure completion to the highest standards.
+                    <br>喜欢高完成度的工作：我追求高质量的工作成果，重视细节。
+                  </div>
+                </div>
+
+                <div style="display: flex; align-items: center; padding: 10px 0;">
+                  <div style="flex: 0 0 24px; text-align: center; color: #000;">
+                    <!-- 山峰图标 -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 18L9 5l4 9l3-5l4 9H3z"></path>
+                    </svg>
+                  </div>
+                  <div style="flex: 1; margin-left: 8px; color: #333;">
+                    <strong style="color: #000;">Stress Resistance</strong><br>
+                    I can maintain calm under pressure, ensuring smooth task completion in high-intensity environments.
+                    <br>拥有较好的抗压能力：我能够在压力下保持冷静和专注，确保任务顺利完成。
+                  </div>
+                </div>
+
+              </div>
+
+            </td>
           </tr>
         </table>
-      
+
+        <br>
+        <br>
+        <br>
+
+        <!-- 技能组合部分 -->
+        <table style="width:100%; border-spacing:0; border-collapse:separate; margin:auto;">
+          <tr>
+            <td style="padding:2.5%; width:100%; vertical-align:middle;">
+
+              <h2 style="font-size: 1.5em; color: #000;">Skill Set / 技能组合</h2>
+              <p style="color: #333; font-size: 1em; line-height: 1.6;">
+                  I'm interested in computer vision, machine learning, optimization, graphics, and robotics.
+              </p>
+
+              <!-- 技能条目列表 -->
+              <div style="margin-top: 15px;">
+                
+                <div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #e0e0e0;">
+                  <div style="flex: 0 0 24px; text-align: center; color: #000;">
+                    <!-- CPU图标 -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                      <path d="M9 9h6v6H9z"></path>
+                      <path d="M3 9h1M3 15h1M20 9h1M20 15h1M9 3v1M15 3v1M9 20v1M15 20v1"></path>
+                    </svg>
+                  </div>
+                  <div style="flex: 1; margin-left: 8px; color: #333;">
+                    <strong style="color: #000;">编程和基于编程的数据分析与统计</strong><br>
+                    我拥有编程的知识，如今，在像GPT这样的大模型的帮助下，我可以自助的实现非常多编程项目，云平台GEE
+                  </div>
+                </div>
+
+                <div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #e0e0e0;">
+                  <div style="flex: 0 0 24px; text-align: center; color: #000;">
+                    <!-- 地图针图标 -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div style="flex: 1; margin-left: 8px; color: #333;">
+                    <strong style="color: #000;">地理制图和地理分析</strong><br>
+                    我使用多种工具完成符合规范的地图制作，我可以熟练使用ArcGIS
+                  </div>
+                </div>
+
+                <div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #e0e0e0;">
+                  <div style="flex: 0 0 24px; text-align: center; color: #000;">
+                    <!-- 设置图标 -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="3"></circle>
+                      <path d="M19.4 15a1.5 1.5 0 0 0 .3 1.6l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.5 1.5 0 0 0-1.6-.3"></path>
+                      <path d="M4.6 15a1.5 1.5 0 0 1-.3 1.6l-.1.1a2 2 0 1 0 2.8 2.8l.1-.1a1.5 1.5 0 0 1 1.6-.3"></path>
+                    </svg>
+                  </div>
+                  <div style="flex: 1; margin-left: 8px; color: #333;">
+                    <strong style="color: #000;">工作流规划</strong><br>
+                    我使用多种效率软件（如Notion、Git等）规划我的工作流，这确实是我的工作习惯和常用方法。
+                  </div>
+                </div>
+
+                <div style="display: flex; align-items: center; padding: 10px 0;">
+                  <div style="flex: 0 0 24px; text-align: center; color: #000;">
+                    <!-- 文档图标 -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"></path>
+                      <path d="M14 2v6h6"></path>
+                    </svg>
+                  </div>
+                  <div style="flex: 1; margin-left: 8px; color: #333;">
+                    <strong style="color: #000;">文稿、演示文稿排版、其他办公组件</strong><br>
+                    我使用LATEX、WORD等进行写作，使用PPT等进行演示文稿制作。
+                  </div>
+                </div>
+
+              </div>
+
+            </td>
+          </tr>
+        </table>
+
         <br>
         <br>
         <br>  
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <!-- 语言水平部分 -->
+        <table style="width:100%; border-spacing:0; border-collapse:separate; margin:auto;">
           <tr>
-              <td style="padding:2.5%;width:100%;vertical-align:middle">
+            <td style="padding:2.5%; width:100%; vertical-align:middle;">
 
-                  <h2>Language Proficiency / 语言水平</h2>
-                  <p>
-                      I am proficient in both Mandarin Chinese and English, with strong capabilities in both languages.
-                  </p>
-                  
-                  <div style="display: flex; align-items: flex-start; margin-top: 10px;">
-                    <div style="flex: 0 0 40px; display: flex; justify-content: center;">
-                        <!-- 内联 "对话框" 图标 -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                        </svg>
-                    </div>
-                    <div style="flex: 1;">
-                        <span style="display: block; margin-left: 10px;">中文（普通话）</span>
-                        <ul style="padding-left: 10px; list-style-position: outside; margin-top: 5px;">
-                            <li>母语</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div style="display: flex; align-items: flex-start; margin-top: 10px;">
-                  <div style="flex: 0 0 40px; display: flex; justify-content: center;">
-                      <!-- 内联字母 "A" 图标，代表英语，使用更细的字体 -->
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                          <text x="7" y="18" font-size="16" font-family="Verdana" font-weight="normal" fill="black">A</text>
-                      </svg>
+              <h2 style="font-size: 1.5em; color: #000;">Skill Set / 技能组合</h2>
+              <p style="color: #333; font-size: 1em; line-height: 1.6;">
+                  I'm interested in computer vision, machine learning, optimization, graphics, and robotics.
+              </p>
+
+              <div style="display: flex; gap: 15px; align-items: center; justify-content: center; margin-top: 10px;">
+
+                <!-- 中文卡片 -->
+                <div style="flex: 1; padding: 20px; border-radius: 12px; background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid rgba(200, 200, 200, 0.3); text-align: center;">
+                  <!-- 中文图标 -->
+                  <div style="display: flex; justify-content: center; margin-bottom: 10px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
                   </div>
-                  <div style="flex: 1;">
-                      <span style="display: block; margin-left: 10px;">英文：系统学习</span>
-                      <ul style="padding-left: 10px; list-style-position: outside; margin-top: 5px;">
-                          <li>College English Test 4/6</li>
-                      </ul>
-                  </div> 
-              </div>                                                     
-        
-              </td>
+                  <span style="font-size: 1.1em; font-weight: bold; color: #333;">中文（普通话）</span>
+                  <p style="margin-top: 8px; font-size: 0.95em; color: #555;">母语</p>
+                </div>
+
+                <!-- 渐变分隔线 -->
+                <div style="width: 1px; height: 80px; background: linear-gradient(to bottom, rgba(200,200,200,0), rgba(200,200,200,0.3), rgba(200,200,200,0));"></div>
+
+                <!-- 英文卡片 -->
+                <div style="flex: 1; padding: 20px; border-radius: 12px; background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid rgba(200, 200, 200, 0.3); text-align: center;">
+                  <!-- 英文图标 -->
+                  <div style="display: flex; justify-content: center; margin-bottom: 10px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <text x="6" y="18" font-size="16" font-family="Verdana" font-weight="normal" fill="#333">A</text>
+                    </svg>
+                  </div>
+                  <span style="font-size: 1.1em; font-weight: bold; color: #333;">英文</span>
+                  <p style="margin-top: 8px; font-size: 0.95em; color: #555;">系统学习，<em>College English Test 4/6</em></p>
+                </div>
+
+              </div>
+
+            </td>
           </tr>
         </table>
-              
+
         <br>
         <br>
         <br>
@@ -833,13 +842,14 @@
                   border-radius: 8px;
                 }
               </style>
+
             </td>
           </tr>
           {% endif %}
           {% endfor %}
           {% endfor %}
         </table>
-        
+                
 
         <br>
         <br>
@@ -857,34 +867,35 @@
         <br>
         <br>
 
-        <div class="widget-container">
-          <div class="widget">
-              <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=ODn7N8fqBbx5P15xjI8evjsuPBx571K6d7Dq9Uhp07Y"></script>
-          </div>
-        </div>
+                <div class="widget-container">
+                  <div class="widget">
+                      <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=ODn7N8fqBbx5P15xjI8evjsuPBx571K6d7Dq9Uhp07Y"></script>
+                  </div>
+                </div>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:center;font-size:small;margin-bottom:2px;">
-                <i>「寒くなってきたな。」「いいえ、もう春です。」</i>――<i>『氷菓』</i>
-              </p>
+                <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                  <tr>
+                    <td style="padding:0px">
+                      <br>
+                      <p style="text-align:center;font-size:small;margin-bottom:2px;">
+                        <i>「寒くなってきたな。」「いいえ、もう春です。」</i>――<i>『氷菓』</i>
+                      </p>
 
-              <br>
+                      <br>
 
-              <p style="text-align:center;font-size:small;margin-top:2px;">
-                Thanks to <a style="font-size:small;" href="https://jonbarron.info">Jon Barron</a> for the website template, <br>Cheng has added additional features to it.
-              </p>
-            </td>
-          </tr>
-        </table>
-        
-      </td>
-    </tr>
-  </table>
+                      <p style="text-align:center;font-size:small;margin-top:2px;">
+                        Thanks to <a style="font-size:small;" href="https://jonbarron.info">Jon Barron</a> for the website template, <br>Cheng has added additional features to it.
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                
+              </td>
+            </tr>
+          </table>
 
   <script src="https://unpkg.com/feather-icons"></script>
+
   <script>
     feather.replace();
   </script>    
