@@ -7,4 +7,7 @@ categories: xue
 
 sc: "<em>Master of <b>Management (MPhil-equivalent)</b> in <b>Land Resource Management</b>, <br>Sep. 2022 - Jun. 2025 (Expected)</em>"
 F1: "Thesis title: Remote Sensing Extraction and Spatio-Temporal Feature Analysis of Artificial Grasslands in the Sanjiangyuan Region"
+tags:
+  - Project 211
+  - Double First-Class Construction
 ---

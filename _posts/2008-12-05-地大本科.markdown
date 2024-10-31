@@ -7,4 +7,7 @@ categories: xue
 
 sc: "<em>Bachelor of <b>Engineering</b> in <b>Land Resource Management</b>, Sep. 2018 - Jun. 2022</em>"
 F1: "Thesis title: Analysis of Conservation Effectiveness in the Qomolangma National Nature Reserve Based on Land Cover Change"
+tags:
+  - Project 211
+  - Double First-Class Construction
 ---

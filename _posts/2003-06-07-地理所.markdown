@@ -4,6 +4,8 @@ title:  "<a href=\"https://www.igsnrr.ac.cn\" target=\"_blank\">Institute of Geo
 date:   2023-06-07 22:21:59 +00:00
 image: /images/dashpoint.png
 categories: xue
+tags:
+  - Research Institutes under the Chinese Academy of Sciences
 
 sc: "<em>Visiting Student in <b>Physical Geography</b> (Phase 1), Nov. 2021 - Jun. 2022 <br> Visiting Student in <b>Physical Geography</b> (Phase 2), Jul. 2023 - May. 2025 (Expected)</em>"
 ---

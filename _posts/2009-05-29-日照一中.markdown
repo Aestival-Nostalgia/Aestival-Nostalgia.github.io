@@ -4,6 +4,9 @@ title:  "<a href=\"http://www.rzyz.org.cn\" target=\"_blank\">Rizhao No.1 Middle
 date:   2009-05-29 22:21:59 +00:00
 image: /images/crv19.png
 categories: xue
+tags:
+  - Key High School of Shandong Province
+  - Shandong Province Teaching Demonstration School
 
 sc: "<em>High School Diploma, Sep. 2015 - Jun. 2018</em>"
 F1: "Gaokao Subjects Taken: Chinese, Mathematics, English, Science Comprehensive (Physics, Chemistry, Biology)"
