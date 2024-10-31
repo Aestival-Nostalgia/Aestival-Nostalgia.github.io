@@ -68,25 +68,85 @@
                 <h1>
                   Haonan Cheng / 程 昊楠
                 </h1>
-                <p style="text-align: justify;">
+                
+                <p style="text-align: justify; margin-top: 15px;">
                   Please note: To maintain the aesthetic of the webpage, only partial information is displayed in both Chinese and English. Please refer primarily to the English content for the most complete information.
                 </p>
                 <p style="text-align: justify;">
                   请注意：为保持网页浏览之美观，本页面仅部分信息使用中-英文同时显示，请您主要阅读英文内容以获取最完整信息；推荐使用桌面设备以获得最佳阅读体验。
                 </p>
+                
 
+              
+              
                 <div style="text-align: center; margin-top: 15px;">
                   <a href="https://richard-cheng.notion.site/Golden-Hour-10b75d5fafe680c8b6dec25301617ae1" 
                      target="_blank" title="&quot;Golden Hour.&quot; — Environmental Portrait Photography by Haonan Cheng"
                      class="image-link">
                       <img src="images/Ouuuuuuu.jpg" alt="Golden Hour" style="width:25px;height:25px; position: relative; top: 5px;">
                   </a> &nbsp;/&nbsp;
-                  <a href="{{ site.baseurl }}/pdfs/CV.pdf" target="_blank">CV</a> &nbsp;/&nbsp;
-                  <a target="_blank" href="https://mailhide.io/e/t2RXbdNL"> Email</a> &nbsp;/&nbsp;
+                  <a href="#" onclick="openPdfModal()">CV</a> &nbsp;/&nbsp;
+                  <a href="#" onclick="openEmailModal()">Email</a> &nbsp;/&nbsp;
                   <a href="https://github.com/Aestival-Nostalgia">GitHub</a> &nbsp;/&nbsp;
                   <a href="https://orcid.org/0000-0002-2135-0056">ORCID</a> &nbsp;
-          
                 </div>
+                
+                <!-- CV 模态框 -->
+                <div id="pdfModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 1000; align-items: center; justify-content: center;">
+                  <div style="background-color: white; padding: 20px; border-radius: 8px; width: 90%; max-width: 400px; text-align: center;">
+                    <h2>Resumes for Different Purposes</h2>
+                    <p>Please select the resume you need from the options below:</p>
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li><a href="{{ site.baseurl }}/pdfs/米哈游CV.pdf" target="_blank">Resume for MiHoYo 2024</a></li>
+                      <li><a href="{{ site.baseurl }}/pdfs/库洛CV.pdf" target="_blank">Resume for Kuro Games 2024</a></li>
+                      <li><a href="{{ site.baseurl }}/pdfs/鹰角CV.pdf" target="_blank">Resume for Hypergryph 2024</a></li>
+                    </ul>
+                    <button onclick="closePdfModal()" style="margin-top: 15px;">关闭</button>
+                  </div>
+                </div>
+                
+                <!-- Email 模态框 -->
+                <div id="emailModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 1000; align-items: center; justify-content: center;">
+                  <div style="background-color: white; padding: 20px; border-radius: 8px; width: 90%; max-width: 400px; text-align: center;">
+                    <h2>E-mail</h2>
+                    <p>Please select the email address that is convenient for you:</p>
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li><a href="https://mailhide.io/e/LQtS9EEO">If you are located in mainland China, please use this email</a></li>
+                      <li><a href="https://mailhide.io/e/t2RXbdNL">f you are outside mainland China, please use this email</a></li>
+                    </ul>
+                    <button onclick="closeEmailModal()" style="margin-top: 15px;">关闭</button>
+                  </div>
+                </div>
+                
+                <!-- JavaScript 代码 -->
+                <script>
+                  function openPdfModal() {
+                    document.getElementById('pdfModal').style.display = 'flex';
+                  }
+                
+                  function closePdfModal() {
+                    document.getElementById('pdfModal').style.display = 'none';
+                  }
+                
+                  function openEmailModal() {
+                    document.getElementById('emailModal').style.display = 'flex';
+                  }
+                
+                  function closeEmailModal() {
+                    document.getElementById('emailModal').style.display = 'none';
+                  }
+                
+                  // 点击模态框外部区域关闭模态框
+                  window.onclick = function(event) {
+                    const pdfModal = document.getElementById('pdfModal');
+                    const emailModal = document.getElementById('emailModal');
+                    if (event.target === pdfModal) {
+                      closePdfModal();
+                    } else if (event.target === emailModal) {
+                      closeEmailModal();
+                    }
+                  }
+                </script>                
                
                 <style>
                   /* 图片链接-的-放大效果 */
@@ -107,6 +167,23 @@
             </td>
           </tr>
         </table>
+
+        <!-- 高级提示框，恢复原渐变方向 -->
+        <div style="display: flex; align-items: center; padding: 20px; margin-top: 20px; border-radius: 15px; background: linear-gradient(135deg, rgba(72, 145, 220, 0.3), rgba(255, 255, 255, 0.2)); backdrop-filter: blur(12px) saturate(180%); border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); font-family: 'Open Sans', sans-serif;">
+          <img src="https://img.icons8.com/fluency-systems-regular/48/4A90E2/info.png" alt="Info Icon" style="width: 28px; height: 28px; margin-right: 15px;">
+          <div style="font-size: 0.85em; color: #333;">
+            <p style="margin: 0; text-align: justify; line-height: 1.6; color: #2c3e50;">
+              <strong>Notice:</strong> This page shows limited information in both English and Chinese for visual balance. For complete content, refer to English.
+              <br>
+              <strong>提示：</strong>本页面显示有限的中英文信息，建议主要阅读英文内容以获取完整信息。
+            </p>
+          </div>
+        </div>
+        <!-- Open Sans 字体引入 -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+        <br>
+        <br>
 
         <a href="https://richard-cheng.notion.site/2025-12075d5fafe68000b209f8453d261c4d" class="hover-color-change">
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
