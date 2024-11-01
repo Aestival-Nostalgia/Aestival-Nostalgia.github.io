@@ -18,7 +18,7 @@ roles:
   - title: "Assistant to the president of the Anime Research Club, participant in the club reorganization plan / 日照一中漫研社 社长助理"
   - title: "Photography Club Member / 日照一中摄影社 成员"
     description: "Conducted data analysis for a research project on machine learning."
-projects:
+projects1:
   - title: "Analysis of Land Use Change"
     description: "Conducted a study on land use changes in the Qomolangma National Nature Reserve based on satellite data."
   - title: "Environmental Impact Assessment"
