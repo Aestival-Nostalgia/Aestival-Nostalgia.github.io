@@ -226,10 +226,10 @@
                 <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px;">
                   {% for tag in post.tags %}
                     {% if tag == "Postgraduate Recommendation / 推荐免试入学" %}
-                      <!-- 橙色渐变特殊标签 -->
-                      <span style="padding: 5px 12px; border-radius: 12px; background: linear-gradient(135deg, #ff8c00, #ff4500); font-size: 0.9em; color: white; font-weight: bold; line-height: 1; box-shadow: 0px 4px 8px rgba(255, 140, 0, 0.3);">
+                      <!-- 柔和但显眼的蓝绿色渐变特殊标签 -->
+                      <span style="padding: 5px 12px; border-radius: 12px; background: linear-gradient(135deg, #fbc6a4, #fff3e0); font-size: 0.9em; color: #8c4f23; font-weight: bold; line-height: 1; box-shadow: 0px 3px 6px rgba(140, 79, 35, 0.2);">
                         {{ tag }}
-                      </span>
+                      </span>                      
                     {% else %}
                       <!-- 常规标签 -->
                       <span style="padding: 3px 8px; border-radius: 10px; background: linear-gradient(135deg, rgba(72, 145, 220, 0.3), rgba(255, 255, 255, 0.2)); font-size: 0.8em; color: #2c3e50; line-height: 1;">
@@ -632,8 +632,6 @@
           </tr>
         </table>
 
-
-
         <br>
         <br>
         <br>  
@@ -651,30 +649,34 @@
               <div style="display: flex; gap: 15px; align-items: center; justify-content: center; margin-top: 10px;">
 
                 <!-- 中文卡片 -->
-                <div style="flex: 1; padding: 20px; border-radius: 12px; background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid rgba(200, 200, 200, 0.3); text-align: center;">
-                  <!-- 中文图标 -->
-                  <div style="display: flex; justify-content: center; margin-bottom: 10px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                <div style="width: 40%; min-height: 130px; padding: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 12px; background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid rgba(200, 200, 200, 0.3); text-align: center;">
+                  <!-- 地球图标和“文”字符 -->
+                  <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 6px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"></path>
                     </svg>
+                    <span style="font-size: 1.3em; color: #333;">文</span>
                   </div>
                   <span style="font-size: 1.1em; font-weight: bold; color: #333;">Chinese (Mandarin)</span>
-                  <p style="margin-top: 8px; font-size: 0.95em; color: #555;">Native language<br></p>
+                  <p style="margin-top: 4px; font-size: 0.9em; color: #555;">Native language</p>
                 </div>
 
                 <!-- 渐变分隔线 -->
                 <div style="width: 1px; height: 80px; background: linear-gradient(to bottom, rgba(200,200,200,0), rgba(200,200,200,0.3), rgba(200,200,200,0));"></div>
 
                 <!-- 英文卡片 -->
-                <div style="flex: 1; padding: 20px; border-radius: 12px; background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid rgba(200, 200, 200, 0.3); text-align: center;">
-                  <!-- 英文图标 -->
-                  <div style="display: flex; justify-content: center; margin-bottom: 10px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <text x="6" y="18" font-size="16" font-family="Verdana" font-weight="normal" fill="#333">A</text>
+                <div style="width: 40%; min-height: 130px; padding: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 12px; background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid rgba(200, 200, 200, 0.3); text-align: center;">
+                  <!-- 地球图标和“A”字符 -->
+                  <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 6px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"></path>
                     </svg>
+                    <span style="font-size: 1.3em; color: #333;">A</span>
                   </div>
                   <span style="font-size: 1.1em; font-weight: bold; color: #333;">English</span>
-                  <p style="margin-top: 8px; font-size: 0.95em; color: #555;">After systematic study<br><em>College English Test 4/6</em></p>
+                  <p style="margin-top: 4px; font-size: 0.9em; color: #555;">After systematic study<br><em>College English Test 4/6</em></p>
                 </div>
 
               </div>
@@ -682,6 +684,7 @@
             </td>
           </tr>
         </table>
+
 
         <br>
         <br>
