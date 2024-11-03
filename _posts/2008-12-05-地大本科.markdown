@@ -51,7 +51,7 @@ roles:
   - title: "学习达人"
     description: "2021春季学期 学习强国挑战赛“学习达人”称号"
 
-projects_expand: "OP"
+projects_expand: ""
 projects:
   - title: "科研训练计划"
     description: "中国地质大学（武汉）基础科研训练计划：长江流域代表性城市土地承载力的横向对比，成功结题（自然科学类/项目编号：1910491034）"
