@@ -10,4 +10,15 @@ F1: "Thesis title: Remote Sensing Extraction and Spatio-Temporal Feature Analysi
 tags:
   - Project 211
   - Double First-Class Construction
+
+roles_expand: "[x]" # 使用[x]标记，让整个roles部分在网页打开时展开
+roles:
+  - title: "Deputy Director of the Student Union Department / 日照一中学生会社团部 副部长"
+  - title: "Founder and first president of the Model United Nations Club / 日照一中模联社建立人、初任社长"
+
+projects:
+  - title: "Analysis of Land Use Change"
+    description: "Conducted a study on land use changes in the Qomolangma National Nature Reserve based on satellite data."
+  - title: "Environmental Impact Assessment"
+    description: "Participated in an environmental impact assessment project for local industrial developments."
 ---

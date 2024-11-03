@@ -253,34 +253,94 @@
 
                 <!-- 职务部分 -->
                 {% if post.roles %}
-                <div style="margin-top: 8px; padding: 8px; background-color: rgba(245, 245, 245, 0.4); border-radius: 6px; font-size: 0.9em; color: #666;">
-                  <h4 style="font-size: 0.85em; margin: 0 0 4px; color: #666; font-weight: normal;">Organizations and Clubs / 学生工作和社团活动</h4>
-                  <ul style="list-style-type: none; padding-left: 0; margin: 0;">
-                    {% for role in post.roles %}
-                    <li style="margin-top: 3px; line-height: 1.4;">
-                      <span style="color: #444; font-weight: bold;">{{ role.title }}</span>: 
-                      <span style="color: #555;">{{ role.description }}</span>
-                    </li>
-                    {% endfor %}
-                  </ul>
+                <div class="roles-section" style="margin-top: 8px; padding: 8px; background-color: rgba(245, 245, 245, 0.4); border-radius: 6px; font-size: 0.9em; color: #666;">
+                  <h4 onclick="toggleSection(event, 'roles-content-{{ forloop.parentloop.index }}')" class="clickable-header" style="font-size: 0.85em; margin: 0 0 4px; color: #666; font-weight: normal;">
+                    Organizations and Clubs / 学生工作和社团活动
+                    <span class="toggle-icon" id="roles-icon-{{ forloop.parentloop.index }}">▼</span>
+                  </h4>
+                  <div id="roles-content-{{ forloop.parentloop.index }}" style="display: {% if post.roles_expand == 'OP' %}block{% else %}none{% endif %}; overflow: hidden; transition: max-height 0.4s ease;">
+                    <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+                      {% for role in post.roles %}
+                      <li style="margin-top: 3px; line-height: 1.4;">
+                        <span style="color: #444; font-weight: bold;">{{ role.title }}</span>
+                        <span style="color: #555;">{{ role.description }}</span>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
                 </div>
                 {% endif %}
 
                 <!-- 项目履历部分 -->
                 {% if post.projects %}
-                <div style="margin-top: 8px; padding: 8px; background-color: rgba(235, 245, 255, 0.4); border-radius: 6px; font-size: 0.9em; color: #555;">
-                  <h4 style="font-size: 0.85em; margin: 0 0 4px; color: #556; font-weight: normal;">Project Experience / 项目履历</h4>
-                  <ul style="list-style-type: none; padding-left: 0; margin: 0;">
-                    {% for project in post.projects %}
-                    <li style="margin-top: 3px; line-height: 1.4;">
-                      <span style="color: #556; font-weight: bold;">{{ project.title }}</span>: 
-                      <span style="color: #666;">{{ project.description }}</span>
-                    </li>
-                    {% endfor %}
-                  </ul>
+                <div class="projects-section" style="margin-top: 8px; padding: 8px; background-color: rgba(235, 245, 255, 0.4); border-radius: 6px; font-size: 0.9em; color: #555;">
+                  <h4 onclick="toggleSection(event, 'projects-content-{{ forloop.parentloop.index }}')" class="clickable-header" style="font-size: 0.85em; margin: 0 0 4px; color: #556; font-weight: normal;">
+                    Project Experience / 项目履历
+                    <span class="toggle-icon" id="projects-icon-{{ forloop.parentloop.index }}">▼</span>
+                  </h4>
+                  <div id="projects-content-{{ forloop.parentloop.index }}" style="display: {% if post.projects_expand == 'OP' %}block{% else %}none{% endif %}; overflow: hidden; transition: max-height 0.4s ease;">
+                    <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+                      {% for project in post.projects %}
+                      <li style="margin-top: 3px; line-height: 1.4;">
+                        <span style="color: #556; font-weight: bold;">{{ project.title }}</span>
+                        <span style="color: #666;">{{ project.description }}</span>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
                 </div>
                 {% endif %}
-                
+
+                <!-- JavaScript: 控制展开/收缩功能 -->
+                <script>
+                  function toggleSection(event, sectionId) {
+                    event.stopPropagation(); // 阻止事件冒泡
+
+                    const content = document.getElementById(sectionId);
+                    const icon = document.getElementById(sectionId.replace("content", "icon"));
+                    const isVisible = content.style.display === 'block';
+
+                    // 仅对当前块进行展开/收缩操作
+                    if (isVisible) {
+                      content.style.display = 'none';
+                      icon.classList.remove('rotate');
+                    } else {
+                      content.style.display = 'block';
+                      icon.classList.add('rotate');
+                    }
+                  }
+                </script>
+
+                <!-- 增强点击提示的CSS -->
+                <style>
+                  .clickable-header {
+                    cursor: pointer;
+                    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+                    padding: 6px 10px; /* 增强视觉效果的内边距 */
+                    border-radius: 6px; /* 加大圆角 */
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between; /* 增加标题和箭头的间距 */
+                  }
+
+                  /* 悬停效果，加深背景色并增强阴影 */
+                  .clickable-header:hover {
+                    background-color: rgba(180, 180, 180, 0.3); /* 背景色更明显 */
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* 增强阴影效果 */
+                  }
+
+                  /* 展开箭头的样式 */
+                  .toggle-icon {
+                    font-size: 0.85em;
+                    transition: transform 0.3s ease; /* 平滑过渡箭头旋转 */
+                  }
+
+                  /* 展开时箭头的旋转 */
+                  .rotate {
+                    transform: rotate(180deg); /* 箭头向上 */
+                  }
+                </style>
+
               </td>
             </tr>
             {% endif %}
