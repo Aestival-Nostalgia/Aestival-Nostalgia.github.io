@@ -51,6 +51,8 @@ roles:
   - title: "学习达人"
     description: "2021春季学期 学习强国挑战赛“学习达人”称号"
 
+city: Wuhan, China
+
 projects_expand: ""
 projects:
   - title: "科研训练计划"

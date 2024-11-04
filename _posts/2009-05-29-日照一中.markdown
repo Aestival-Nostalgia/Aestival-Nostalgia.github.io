@@ -11,6 +11,8 @@ tags:
 sc: "<em>High School Diploma, Sep. 2015 - Jun. 2018</em>"
 F1: "Gaokao Subjects Taken: Chinese, Mathematics, English, Science Comprehensive (Physics, Chemistry, Biology)"
 
+city: Rizhao, China
+
 roles:
   - title: "Deputy Director of the Student Union Department /日照一中学生会社团部 副部长"
   - title: "Founder and first president of the Model United Nations Club / 日照一中模联社建立人、初任社长"

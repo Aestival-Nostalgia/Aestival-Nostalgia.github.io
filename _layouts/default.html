@@ -219,8 +219,19 @@
               <td style="padding:2.5%; width:25%; vertical-align:middle; min-width:120px;">
                 <img src="/tn{{post.image}}" alt="project image" style="width:100%; border-radius:8px;">
               </td>
-              <td style="padding:2.5%; width:75%; vertical-align:middle;">
-                <h3 style="margin-bottom: 5px; font-weight: bold; color: #2c3e50; font-size: 1.4em;">{{ post.title }}</h3>
+              <td style="padding:2.5%; width:75%; vertical-align:middle; position: relative;">
+                <div style="display: flex; align-items: center;">
+                  <h3 style="margin-bottom: 5px; font-weight: bold; color: #2c3e50; font-size: 1.4em; max-width: calc(100% - 130px);"> <!-- 调整标题宽度 -->
+                    {{ post.title }}
+                  </h3>
+                  <!-- 地理位置 -->
+                  <div style="display: flex; align-items: center; position: absolute; right: 0;">
+                    <svg width="16" height="16" fill="#007BFF" viewBox="0 0 24 24" style="margin-right: 4px;">
+                      <path d="M12 2C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7zm0 10.5c-1.933 0-3.5-1.567-3.5-3.5S10.067 5.5 12 5.5 15.5 7.067 15.5 9 13.933 12.5 12 12.5z"/>
+                    </svg>
+                    <span style="color: #007BFF; font-weight: bold;">{{ post.city }}</span>
+                  </div>
+                </div>
 
                 <!-- 标签部分 -->
                 <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px;">
@@ -332,7 +343,7 @@
                   .clickable-header {
                     cursor: pointer;
                     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-                    padding: 6px 10px; /* 增强视觉效果的内边距 */
+                    padding: 6px 10px; /* 增强视觉效果
                     border-radius: 6px; /* 加大圆角 */
                     display: flex;
                     align-items: center;
@@ -351,12 +362,11 @@
                     transition: transform 0.3s ease; /* 平滑过渡箭头旋转 */
                   }
 
-                  /* 展开时箭头的旋转 */
-                  .rotate {
-                    transform: rotate(180deg); /* 箭头向上 */
+                  /* 展开时箭头的旋转效果 */
+                  .toggle-icon.rotate {
+                    transform: rotate(180deg);
                   }
                 </style>
-
               </td>
             </tr>
             {% endif %}
@@ -473,13 +483,67 @@
         <br>
         <br>
 
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tr>
+            <td style="padding:2.5%;width:100%;vertical-align:middle">
+              <h2>Awards / 奖励</h2>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Awards POST -->
+        <table style="width:100%; border-spacing:0px; border-collapse:separate; margin:auto;">
+          {% for post in site.posts %}
+          {% if post.category == 'awards' %}
+          <tr>
+            <td style="padding:1.25%; width:12.5%; vertical-align:middle; min-width:60px;">
+              <!-- 缩小后的奖项缩略图，宽度和高度相对于其他板块减少50% -->
+              <img src="{{ post.thumbnail }}" alt="{{ post.title }} Thumbnail" style="width:80px; height:auto; border-radius:8px;">
+            </td>
+            <td style="padding:1.25%; width:87.5%; vertical-align:middle;">
+              <!-- 奖项标题及授奖单位 -->
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <h3 style="margin-bottom: 3px; font-weight: bold; color: #2c3e50; font-size: 1.2em;">
+                  {{ post.title }}
+                </h3>
+              </div>
+
+              <!-- 授奖单位及奖项等级 -->
+              <p style="color: #666; font-weight: bold; margin: 3px 0; font-size: 0.9em;">{{ post.organization }} | {{ post.award_level }}</p>
+
+              <!-- 奖项描述 -->
+              <p style="color: #444; font-size: 0.85em; line-height: 1.4; margin: 3px 0;">{{ post.description }}</p>
+
+              <!-- 日期 -->
+              <p style="color: #888; font-size: 0.75em; margin: 3px 0;">Date: {{ post.date | date: "%B %d, %Y" }}</p>
+
+              <!-- 相关链接 -->
+              <div style="margin-top: 5px;">
+                {% for link in post.links %}
+                  <a href="{{ link.url }}" target="_blank" style="padding: 4px 8px; margin-right: 4px; border-radius: 5px; background-color: #e0f7fa; color: #007BFF; font-size: 0.8em; text-decoration: none;">
+                    {{ link.name }}
+                  </a>
+                {% endfor %}
+              </div>
+            </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+        </table>
+
+        <br>
+        <br>
+        <br>
+
         <!-- 特质部分 -->
         <table style="width:100%; border-spacing:0; border-collapse:separate; margin:auto;">
           <tr>
             <td style="padding:2.5%; width:100%; vertical-align:middle;">
 
-              <h2 style="font-size: 1.5em; color: #000;">Characteristics / 特质</h2>
-              <p style="color: #333; font-size: 1em; line-height: 1.6;">
+              <!-- 修改后的标题格式 -->
+              <h2>Characteristics / 特质</h2>
+
+              <p>
                   I'm interested in creative planning, design work, and organizing content systematically.
                   <br>我对创意策划、设计工作和系统地组织内容感兴趣。
               </p>
@@ -564,8 +628,10 @@
           <tr>
             <td style="padding:2.5%; width:100%; vertical-align:middle;">
 
-              <h2 style="font-size: 1.5em; color: #000;">Skill Set / 技能组合</h2>
-              <p style="color: #333; font-size: 1em; line-height: 1.6;">
+              <!-- 修改后的标题格式 -->
+              <h2>Skill Set / 技能组合</h2>
+
+              <p>
                   I'm interested in computer vision, machine learning, optimization, graphics, and robotics.
               </p>
 
@@ -692,7 +758,6 @@
             </td>
           </tr>
         </table>
-
 
         <br>
         <br>
@@ -930,7 +995,6 @@
           {% endfor %}
         </table>
                 
-
         <br>
         <br>
         <br>
