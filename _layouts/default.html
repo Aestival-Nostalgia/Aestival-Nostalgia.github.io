@@ -836,13 +836,42 @@
               
               <!-- 切换按钮 -->
               <div style="display: flex; align-items: center; justify-content: center;">
-                <button id="next-group-button-{{ post.id }}" class="ios-style-button" style="margin-left: 10px;">
-
+                <button id="next-group-button-{{ post.id }}" class="ios-style-button" style="
+                  margin-left: 10px;
+                  padding: 12px 24px;
+                  font-size: 1em;
+                  background: linear-gradient(145deg, #d1efff, #79bfff); /* 精致蓝白渐变 */
+                  border: 1px solid #66aaff;
+                  border-radius: 12px; /* 圆角边框，让按钮更现代 */
+                  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15), -6px -6px 12px rgba(255, 255, 255, 0.7); /* 精致阴影效果 */
+                  color: #003366;
+                  font-weight: bold;
+                  cursor: pointer;
+                  transition: all 0.3s ease, transform 0.2s ease;
+                  position: relative;
+                  overflow: hidden;
+                " onmouseover="this.style.boxShadow='inset 6px 6px 12px rgba(0, 0, 0, 0.15), inset -6px -6px 12px rgba(255, 255, 255, 0.7)'; this.style.transform='scale(1.02)';" onmouseout="this.style.boxShadow='6px 6px 12px rgba(0, 0, 0, 0.15), -6px -6px 12px rgba(255, 255, 255, 0.7)'; this.style.transform='scale(1)';">
+                  
+                  <!-- 按钮文字 -->
                   These are some of my photos, Click this button to see more. <br>You can click on the image to view it in a larger size.
-
+                  
+                  <!-- 光泽效果 -->
+                  <span style="
+                    content: '';
+                    position: absolute;
+                    top: -50%;
+                    left: -50%;
+                    width: 200%;
+                    height: 200%;
+                    background: rgba(255, 255, 255, 0.2);
+                    transform: rotate(45deg);
+                    transition: all 0.4s ease;
+                    pointer-events: none;
+                    border-radius: 50%;
+                  "></span>
                 </button>
               </div>
-              
+
               <div class="image-gallery" id="image-gallery-{{ post.id }}">
                 {% assign first_group = post.extra_images[0].group %}
                 {% for image in first_group %}
