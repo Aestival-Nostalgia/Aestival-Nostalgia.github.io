@@ -11,5 +11,5 @@ tags: ["Research", "Excellence", "Innovation"]  # 自定义标签
 links:
   - name: "Official Announcement"
     url: "http://www.creva.org.cn/index.php?m=content&c=index&a=show&catid=43&id=8398"  # 其他相关链接
-thumbnail: "/images/MPA.JPG"  # 奖项缩略图
+thumbnail: /images/MPA.JPG  # 奖项缩略图
 ---
