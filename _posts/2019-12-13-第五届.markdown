@@ -1,0 +1,17 @@
+---
+layout: post
+title: "The 5th National College Students Real Estate Valuation Skills Competition"  # 奖项名称
+date: 2024-11-04  # 奖项日期
+category: awards  # 固定为 awards 类别
+organization: "National MPA Education Steering Committe / Joint Conference of Deans (Department Heads) of Land Resources Management in Chinese Universities"  # 授奖单位
+award_level: "National First Prize"  # 奖项级别
+location: "City, Country"  # 授奖地点
+description: "A brief description of the award and the context."  # 奖项简要描述
+tags: ["Research", "Excellence", "Innovation"]  # 自定义标签
+1links:
+  - name: "Certificate"
+    url: "/pdfs/certificate.pdf"  # 链接到奖状、媒体报道等
+  - name: "Official Announcement"
+    url: "https://example.com"  # 其他相关链接
+thumbnail: "/images/MPA.JPG"  # 奖项缩略图
+---

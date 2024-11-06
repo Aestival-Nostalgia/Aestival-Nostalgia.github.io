@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Award Title"  # 奖项名称
+title: "The 2nd National College Students' Land Survey Competition"  # 奖项名称
 date: 2024-11-04  # 奖项日期
 category: awards  # 固定为 awards 类别
-organization: "Awarding Organization"  # 授奖单位
-award_level: "Gold / Silver / Bronze / Special Mention"  # 奖项级别
+organization: "National MPA Education Steering Committe / Land Economics Branch of China Land Society / Science Popularization Committee of China Land Association"  # 授奖单位
+award_level: "National Second Prize"  # 奖项级别
 location: "City, Country"  # 授奖地点
 description: "A brief description of the award and the context."  # 奖项简要描述
 tags: ["Research", "Excellence", "Innovation"]  # 自定义标签
@@ -13,5 +13,5 @@ tags: ["Research", "Excellence", "Innovation"]  # 自定义标签
     url: "/pdfs/certificate.pdf"  # 链接到奖状、媒体报道等
   - name: "Official Announcement"
     url: "https://example.com"  # 其他相关链接
-thumbnail: "/images/gg28154743.png"  # 奖项缩略图
+thumbnail: "/images/MPA.JPG"  # 奖项缩略图
 ---

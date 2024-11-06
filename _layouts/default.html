@@ -182,6 +182,7 @@
 
         <br>
         <br>
+        <br>
 
         <a href="https://richard-cheng.notion.site/2025-12075d5fafe68000b209f8453d261c4d" class="hover-color-change">
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
@@ -196,6 +197,7 @@
           </table>
         </a>
         
+        <br>
         <br>
         <br>
 
@@ -491,45 +493,57 @@
           </tr>
         </table>
 
+
         <!-- Awards POST -->
-        <table style="width:100%; border-spacing:0px; border-collapse:separate; margin:auto;">
-          {% for post in site.posts %}
-          {% if post.category == 'awards' %}
-          <tr>
-            <td style="padding:1.25%; width:12.5%; vertical-align:middle; min-width:60px;">
-              <!-- 缩小后的奖项缩略图，宽度和高度相对于其他板块减少50% -->
-              <img src="{{ post.thumbnail }}" alt="{{ post.title }} Thumbnail" style="width:80px; height:auto; border-radius:8px;">
-            </td>
-            <td style="padding:1.25%; width:87.5%; vertical-align:middle;">
-              <!-- 奖项标题及授奖单位 -->
-              <div style="display: flex; align-items: center; justify-content: space-between;">
-                <h3 style="margin-bottom: 3px; font-weight: bold; color: #2c3e50; font-size: 1.2em;">
-                  {{ post.title }}
-                </h3>
-              </div>
+<table style="width:100%; border-spacing:0px; border-collapse:separate; margin:auto;">
+  {% for post in site.posts %}
+  {% if post.category == 'awards' %}
+  <tr>
+    <td style="padding:1.25%; width:12.5%; vertical-align:middle; min-width:60px;">
+      <!-- 缩小后的奖项缩略图，宽度和高度相对于其他板块减少50% -->
+      <img src="{{ post.thumbnail }}" alt="{{ post.title }} Thumbnail" style="width:80px; height:auto; border-radius:8px;">
+    </td>
+    <td style="padding:1.25%; width:87.5%; vertical-align:middle;">
+      <!-- 奖项标题 -->
+      <h3 style="margin: 0; font-weight: bold; color: #2c3e50; font-size: 1.2em;">
+        {{ post.title }}
+      </h3>
 
-              <!-- 授奖单位及奖项等级 -->
-              <p style="color: #666; font-weight: bold; margin: 3px 0; font-size: 0.9em;">{{ post.organization }} | {{ post.award_level }}</p>
+      <!-- 高级感的奖励等级标签，强制换行 -->
+      <div style="display: block; margin: 6px 0 10px; padding: 6px 12px; background: linear-gradient(135deg, #ff7e5f, #feb47b); color: #ffffff; border-radius: 8px; font-weight: bold; font-size: 0.9em; letter-spacing: 0.05em; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); max-width: 150px; text-align: center;">
+        {{ post.award_level }}
+      </div>
 
-              <!-- 奖项描述 -->
-              <p style="color: #444; font-size: 0.85em; line-height: 1.4; margin: 3px 0;">{{ post.description }}</p>
+      <!-- 授奖单位 -->
+      <p style="color: #666; font-weight: bold; margin: 5px 0; font-size: 0.9em;">
+        {{ post.organization }}
+      </p>
 
-              <!-- 日期 -->
-              <p style="color: #888; font-size: 0.75em; margin: 3px 0;">Date: {{ post.date | date: "%B %d, %Y" }}</p>
+      <!-- 奖项描述 -->
+      <p style="color: #444; font-size: 0.85em; line-height: 1.4; margin: 5px 0;">
+        {{ post.description }}
+      </p>
 
-              <!-- 相关链接 -->
-              <div style="margin-top: 5px;">
-                {% for link in post.links %}
-                  <a href="{{ link.url }}" target="_blank" style="padding: 4px 8px; margin-right: 4px; border-radius: 5px; background-color: #e0f7fa; color: #007BFF; font-size: 0.8em; text-decoration: none;">
-                    {{ link.name }}
-                  </a>
-                {% endfor %}
-              </div>
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-        </table>
+      <!-- 日期 -->
+      <p style="color: #888; font-size: 0.75em; margin: 5px 0;">
+        Date: {{ post.date | date: "%B %d, %Y" }}
+      </p>
+
+      <!-- 相关链接 -->
+      <div style="margin-top: 8px;">
+        {% for link in post.links %}
+          <a href="{{ link.url }}" target="_blank" style="padding: 4px 8px; margin-right: 4px; border-radius: 5px; background-color: #e0f7fa; color: #007BFF; font-size: 0.8em; text-decoration: none;">
+            {{ link.name }}
+          </a>
+        {% endfor %}
+      </div>
+    </td>
+  </tr>
+  {% endif %}
+  {% endfor %}
+</table>
+
+
 
         <br>
         <br>
