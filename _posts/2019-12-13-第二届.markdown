@@ -11,5 +11,5 @@ tags: ["Research", "Excellence", "Innovation"]  # 自定义标签
 links:
   - name: "Official Announcement"
     url: "https://wap.gmdaily.cn/article/16cf4af3b3b84271a71c5c8bb7dcd166"  # 其他相关链接
-thumbnail: /images/D2JJ.png  # 奖项缩略图
+thumbnail: /images/D2JJ.png  # 奖项缩略图大小写敏感！
 ---
