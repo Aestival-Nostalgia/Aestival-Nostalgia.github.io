@@ -477,9 +477,19 @@
                 {{ post.title }}
               </h3>
 
-              <!-- 高级感的奖励等级标签，强制换行 -->
-              <div style="display: block; margin: 6px 0 10px; padding: 6px 12px; background: linear-gradient(135deg, #ff7e5f, #feb47b); color: #ffffff; border-radius: 8px; font-weight: bold; font-size: 0.9em; letter-spacing: 0.05em; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); max-width: 150px; text-align: center;">
-                {{ post.award_level }}
+              <!-- 标签容器：得奖等级和队伍负责人 -->
+              <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0;">
+                <!-- 得奖等级标签 -->
+                <div style="padding: 6px 12px; background: linear-gradient(135deg, #ff7e5f, #feb47b); color: #ffffff; border-radius: 8px; font-weight: bold; font-size: 0.9em; letter-spacing: 0.05em; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); max-width: 150px; text-align: center;">
+                  {{ post.award_level }}
+                </div>
+
+                <!-- 队伍负责人标签（通过 Markdown 文件控制） -->
+                {% if post.contribution_tag %}
+                <div style="padding: 4px 10px; background: rgba(255, 126, 95, 0.15); color: #ff7e5f; border: 1px solid #ff7e5f; border-radius: 6px; font-weight: bold; font-size: 0.85em; letter-spacing: 0.04em; text-align: center;">
+                  {{ post.contribution_tag }}
+                </div>
+                {% endif %}
               </div>
 
               <!-- 授奖单位 -->
@@ -500,9 +510,9 @@
               <!-- 相关链接 -->
               <div style="margin-top: 8px;">
                 {% for link in post.links %}
-                  <a href="{{ link.url }}" target="_blank" style="padding: 4px 8px; margin-right: 4px; border-radius: 5px; background-color: #e0f7fa; color: #007BFF; font-size: 0.8em; text-decoration: none;">
-                    {{ link.name }}
-                  </a>
+                <a href="{{ link.url }}" target="_blank" style="padding: 4px 8px; margin-right: 4px; border-radius: 5px; background-color: #e0f7fa; color: #007BFF; font-size: 0.8em; text-decoration: none;">
+                  {{ link.name }}
+                </a>
                 {% endfor %}
               </div>
             </td>
@@ -510,7 +520,7 @@
           {% endif %}
           {% endfor %}
         </table>
-
+        
         <br>
         <br>
         <br>

@@ -6,6 +6,7 @@ category: awards  # 固定为 awards 类别
 organization: "National MPA Education Steering Committe (Ministry of Education of China) / Land Economics Branch of China Land Society / Science Popularization Committee of China Land Association"  # 授奖单位
 award_level: "National Second Prize"  # 奖项级别
 location: "City, Country"  # 授奖地点
+contribution_tag: "De facto leader / 队伍负责人（实际）"
 description: "The National Land Survey Competition encourages students to research local land policy innovations, aligning with high-quality development goals and fostering land management advancement."  # 奖项简要描述
 tags: ["Research", "Excellence", "Innovation"]  # 自定义标签
 links:
