@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "The 4th National College Students' Land and Space Planning Skills Competition"  # 奖项名称
-date: 2024-11-04  # 奖项日期
+date: 2021-06-19  # 奖项日期
 category: awards  # 固定为 awards 类别
-organization: "National MPA Education Steering Committe / Joint Conference of Deans (Department Heads) of Land Resources Management in Chinese Universities"  # 授奖单位
+organization: "National MPA Education Steering Committe (Ministry of Education of China) / Joint Conference of Deans (Department Heads) of Land Resources Management in Chinese Universities / Land Planning Branch of China Land Society"  # 授奖单位
 award_level: "National First Prize"  # 奖项级别
 location: "City, Country"  # 授奖地点
-description: "A brief description of the award and the context."  # 奖项简要描述
+description: "The National Land Space Planning Skills Competition aims to foster multidisciplinary planning talents, inspire innovation, and support China's ecological and rural revitalization goals."  # 奖项简要描述
 tags: ["Research", "Excellence", "Innovation"]  # 自定义标签
 links:
   - name: "Official Announcement"
