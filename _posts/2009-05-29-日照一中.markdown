@@ -19,4 +19,18 @@ roles:
   - title: "Core members of the Speech and Debate Club"
   - title: "Assistant to the president of the Anime Research Club, participant in the club reorganization plan"
   - title: "Photography Club Member"
+  - title: Deputy Director of the Community Management Department
+    description: Assisted in organizing events and managing student issues
+    activities:
+      - Organized monthly student meetings
+      - Managed feedback and resolved issues for over 200 students
+      - Coordinated with other departments for joint events
+
+  - title: Founder and first president of the Model United Nations Club
+    description: Established the club and organized activities
+    activities:
+      - Hosted weekly meetings to discuss global issues
+      - Organized a local MUN conference with participation from other schools
+      - Led training sessions on public speaking and diplomacy
+
 ---
