@@ -318,7 +318,7 @@
           {% endfor %}
         </table>
 
-        <!-- 增强点击提示的CSS -->
+        <!-- 增强点击提示的CSS! -->
         <style>
           .clickable-header {
             cursor: pointer;
@@ -357,7 +357,7 @@
           </tr>
         </table>
 
-        <!-- 出版物部分!! -->
+        <!-- 出版物部分 -->
         <table style="width:100%; border-spacing:0; border-collapse:separate; margin:auto;">
           {% for post in site.posts %}
           {% for cat in post.categories %}
@@ -369,7 +369,7 @@
               <td style="padding:2.5%; width:75%; vertical-align:middle;">
                 <h3 style="margin-bottom: 8px; font-weight: bold; color: #2c3e50; font-size: 1.4em; line-height: 1.3;">{{ post.title }}</h3>
 
-                <!-- 作者和发布来源部分 - 默认排版 -->
+                <!-- 作者和发布来源部分 -->
                 <p>
                   {{ post.author }}<br><em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
                 </p>
@@ -380,39 +380,32 @@
                 <!-- 链接部分 -->
                 <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
                   {% if post.bibtex %}
-                    <a href="#" onclick="toggleBib(event, '{{ post.bibtex }}', '{{ post.id }}')" style="padding: 3px 8px; border-radius: 4px; background: linear-gradient(135deg, #d0ebff, #f0faff); color: #2c3e50; font-size: 0.8em; text-decoration: none; border: 1px solid rgba(0, 150, 255, 0.1); transition: all 0.3s ease; display: inline-block;">
+                    <a href="#" onclick="toggleBib(event, '{{ post.bibtex }}', '{{ post.id }}')" 
+                      class="animated-link">
                       BibTex
                     </a>
                   {% endif %}
                   {% if post.arxiv %}
-                    <a href="{{ post.arxiv }}" style="padding: 3px 8px; border-radius: 4px; background: linear-gradient(135deg, #d0ebff, #f0faff); color: #2c3e50; font-size: 0.8em; text-decoration: none; border: 1px solid rgba(0, 150, 255, 0.1); transition: all 0.3s ease; display: inline-block;">
-                      arxiv
-                    </a>
+                    <a href="{{ post.arxiv }}" class="animated-link">arxiv</a>
                   {% endif %}
                   {% if post.video %}
-                    <a href="{{ post.video }}" style="padding: 3px 8px; border-radius: 4px; background: linear-gradient(135deg, #d0ebff, #f0faff); color: #2c3e50; font-size: 0.8em; text-decoration: none; border: 1px solid rgba(0, 150, 255, 0.1); transition: all 0.3s ease; display: inline-block;">
-                      Video
-                    </a>
+                    <a href="{{ post.video }}" class="animated-link">Video</a>
                   {% endif %}
                   {% if post.code %}
-                    <a href="{{ post.code }}" style="padding: 3px 8px; border-radius: 4px; background: linear-gradient(135deg, #d0ebff, #f0faff); color: #2c3e50; font-size: 0.8em; text-decoration: none; border: 1px solid rgba(0, 150, 255, 0.1); transition: all 0.3s ease; display: inline-block;">
-                      code
-                    </a>
+                    <a href="{{ post.code }}" class="animated-link">code</a>
                   {% endif %}
                   {% if post.poster %}
-                    <a href="{{ post.poster }}" style="padding: 3px 8px; border-radius: 4px; background: linear-gradient(135deg, #d0ebff, #f0faff); color: #2c3e50; font-size: 0.8em; text-decoration: none; border: 1px solid rgba(0, 150, 255, 0.1); transition: all 0.3s ease; display: inline-block;">
-                      poster
-                    </a>
+                    <a href="{{ post.poster }}" class="animated-link">poster</a>
                   {% endif %}
                   {% if post.PDF %}
-                    <a href="{{ post.PDF }}" target="_blank" style="padding: 3px 8px; border-radius: 4px; background: linear-gradient(135deg, #d0ebff, #f0faff); color: #2c3e50; font-size: 0.8em; text-decoration: none; border: 1px solid rgba(0, 150, 255, 0.1); transition: all 0.3s ease; display: inline-block;">
-                      PDF
-                    </a>
+                    <a href="{{ post.PDF }}" target="_blank" class="animated-link">PDF</a>
                   {% endif %}
                 </div>
 
-                <!-- BibTex 预览框，扁平化样式 -->
-                <div id="bibtex-preview-{{ post.id }}" style="display:none; padding: 15px; border-radius: 8px; background-color: rgba(245, 245, 245, 0.6); border: 1px solid rgba(200, 200, 200, 0.3); font-family: 'Open Sans', sans-serif; margin-top: 10px; font-size: 0.85em; color: #2e4057;">
+                <!-- BibTex 预览框 -->
+                <div id="bibtex-preview-{{ post.id }}" 
+                    style="display:none; padding: 15px; border-radius: 8px; background-color: rgba(245, 245, 245, 0.6); 
+                    border: 1px solid rgba(200, 200, 200, 0.3); font-family: 'Open Sans', sans-serif; margin-top: 10px; font-size: 0.85em; color: #2e4057;">
                   <pre style="margin: 0; font-family: monospace; white-space: pre-wrap; word-wrap: break-word; color: #1c2e4a;">
                     <!-- BibTex 内容会在这里显示 -->
                   </pre>
@@ -423,6 +416,32 @@
           {% endfor %}
           {% endfor %}
         </table>
+
+        <!-- 内联 CSS 样式 -->
+        <style>
+          /* 链接的基础样式 */
+          .animated-link {
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: linear-gradient(135deg, #d0ebff, #f0faff);
+            color: #2c3e50;
+            font-size: 0.8em;
+            text-decoration: none;
+            border: 1px solid rgba(0, 150, 255, 0.1);
+            transition: all 0.3s ease;
+            display: inline-block;
+            transform: scale(1);
+          }
+
+          /* 鼠标悬停时的动画效果 */
+          .animated-link:hover {
+            transform: scale(1.05); /* 轻微放大 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 增加阴影 */
+            background: linear-gradient(135deg, #f0faff, #e0f7ff); /* 改变背景色 */
+            border-color: rgba(0, 150, 255, 0.2); /* 提高边框颜色对比度 */
+          }
+        </style>
+
 
         <script>
           function toggleBib(event, bibFileName, id) {
@@ -462,7 +481,7 @@
           </tr>
         </table>
 
-        <!-- Awards POST. -->
+        <!-- Awards POST -->
         <table style="width:100%; border-spacing:0px; border-collapse:separate; margin:auto;">
           {% for post in site.posts %}
           {% if post.category == 'awards' %}
@@ -484,7 +503,7 @@
                   {{ post.award_level }}
                 </div>
 
-                <!-- 队伍负责人标签（通过 Markdown 文件控制） -->
+                <!-- 队伍负责人标签 -->
                 {% if post.contribution_tag %}
                 <div style="padding: 4px 10px; background: rgba(255, 126, 95, 0.15); color: #ff7e5f; border: 1px solid #ff7e5f; border-radius: 6px; font-weight: bold; font-size: 0.85em; letter-spacing: 0.04em; text-align: center;">
                   {{ post.contribution_tag }}
@@ -508,9 +527,9 @@
               </p>
 
               <!-- 相关链接 -->
-              <div style="margin-top: 8px;">
+              <div style="margin-top: 8px; display: flex; gap: 6px;">
                 {% for link in post.links %}
-                <a href="{{ link.url }}" target="_blank" style="padding: 4px 8px; margin-right: 4px; border-radius: 5px; background-color: #e0f7fa; color: #007BFF; font-size: 0.8em; text-decoration: none;">
+                <a href="{{ link.url }}" target="_blank" class="animated-link">
                   {{ link.name }}
                 </a>
                 {% endfor %}
@@ -520,7 +539,32 @@
           {% endif %}
           {% endfor %}
         </table>
-        
+
+        <!-- 内联 CSS 样式 -->
+        <style>
+          /* 链接的基础样式 */
+          .animated-link {
+            padding: 4px 8px;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #e0f7fa, #ffffff);
+            color: #007BFF;
+            font-size: 0.8em;
+            text-decoration: none;
+            border: 1px solid rgba(0, 150, 255, 0.1);
+            transition: all 0.3s ease;
+            display: inline-block;
+            transform: scale(1);
+          }
+
+          /* 鼠标悬停时的动画效果 */
+          .animated-link:hover {
+            transform: scale(1.05); /* 轻微放大 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 增加阴影 */
+            background: linear-gradient(135deg, #ffffff, #d0f7ff); /* 改变背景色 */
+            border-color: rgba(0, 150, 255, 0.2); /* 提高边框颜色对比度 */
+          }
+        </style>
+
         <br>
         <br>
         <br>
