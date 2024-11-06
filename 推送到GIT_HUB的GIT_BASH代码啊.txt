@@ -1,11 +1,7 @@
 cd Aestival-Nostalgia.github.io
-
 git init
-
 git add .
-
 git commit -m “2410300450”
-
 git push
 
 
