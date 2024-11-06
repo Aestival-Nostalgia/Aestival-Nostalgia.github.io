@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The 5th National College Students Real Estate Valuation Skills Competition"  # 奖项名称
+title: "The 5th National College Students' Real Estate Valuation Skills Competition"  # 奖项名称
 date: 2021-07-17  # 奖项日期
 category: awards  # 固定为 awards 类别
 organization: "National MPA Education Steering Committe (Ministry of Education of China) / Joint Conference of Deans (Department Heads) of Land Resources Management in Chinese Universities"  # 授奖单位
