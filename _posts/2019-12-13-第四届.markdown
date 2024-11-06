@@ -11,5 +11,5 @@ tags: ["Research", "Excellence", "Innovation"]  # 自定义标签
 links:
   - name: "Official Announcement"
     url: "https://www.cug.edu.cn/info/10506/95043.htm"  # 其他相关链接
-thumbnail: /images/MPA.JPG  # 奖项缩略图
+thumbnail: /images/MPA.jpg  # 奖项缩略图
 ---
