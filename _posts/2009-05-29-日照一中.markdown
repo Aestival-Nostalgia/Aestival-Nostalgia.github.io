@@ -14,14 +14,9 @@ F1: "Gaokao Subjects Taken: Chinese, Mathematics, English, Science Comprehensive
 city: Rizhao, China
 
 roles:
-  - title: "Deputy Director of the Student Union Department /日照一中学生会社团部 副部长"
-  - title: "Founder and first president of the Model United Nations Club / 日照一中模联社建立人、初任社长"
-  - title: "Core members of the debate club / 日照一中演辩社 核心成员"
-  - title: "Assistant to the president of the Anime Research Club, participant in the club reorganization plan / 日照一中漫研社 社长助理"
-  - title: "Photography Club Member / 日照一中摄影社 成员"
-projects1:
-  - title: "Analysis of Land Use Change"
-    description: "Conducted a study on land use changes in the Qomolangma National Nature Reserve based on satellite data."
-  - title: "Environmental Impact Assessment"
-    description: "Participated in an environmental impact assessment project for local industrial developments."
+  - title: "Deputy Director of the Community Management Department, Student Union"
+  - title: "Founder and first president of the Model United Nations Club"
+  - title: "Core members of the Speech and Debate Club"
+  - title: "Assistant to the president of the Anime Research Club, participant in the club reorganization plan"
+  - title: "Photography Club Member"
 ---
