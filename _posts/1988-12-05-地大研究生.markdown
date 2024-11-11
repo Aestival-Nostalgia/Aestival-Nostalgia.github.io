@@ -13,7 +13,7 @@ tags:
   - Postgraduate Recommendation / 推荐免试入学
 city: Wuhan, China
 
-roles_expand: OP
+roles_expand: 
 roles:
   - title: "Student Union President"
     description: "Led the student union in organizing campus-wide events and fostering student engagement."
@@ -21,7 +21,7 @@ roles:
       - "Organized annual cultural festivals with over 5,000 attendees."
       - "Raised funding of 200,000 RMB for student initiatives."
 
-awards_expand: OP
+awards_expand: 
 awards:
   - title: "National Scholarship"
     description: "Awarded for outstanding academic performance and research contributions."
@@ -29,7 +29,7 @@ awards:
       - "Top 1% of students nationwide."
       - "Recognized for excellence in geosciences research."
 
-projects_expand: OP
+projects_expand: 
 projects:
   - title: "Remote Sensing for Land Use Analysis"
     description: "Developed a deep learning model for analyzing satellite imagery."
