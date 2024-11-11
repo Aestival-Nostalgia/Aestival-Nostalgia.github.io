@@ -13,7 +13,7 @@ F1: "Gaokao Subjects Taken: Chinese, Mathematics, English, Science Comprehensive
 
 city: Rizhao, China
 
-roles_expand: ""
+roles_expand: "OP"
 roles:
   - title: "Deputy Director of the Community Management Department, Student Union"
   - title: "Founder and first president of the Model United Nations Club"
